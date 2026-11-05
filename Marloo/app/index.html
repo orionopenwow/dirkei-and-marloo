@@ -461,6 +461,45 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
   .blatant-sugg-card.sand:hover  { border-color: #c084fc; box-shadow: 0 0 16px rgba(192, 132, 252, 0.25); }
   .blatant-sugg-card.cyber:hover { border-color: #00f0ff; box-shadow: 0 0 16px rgba(0, 240, 255, 0.25); }
   .blatant-sugg-card.horror:hover { border-color: #f43f5e; box-shadow: 0 0 16px rgba(244, 63, 94, 0.25); }
+
+  /* Hardened clean layout: no borders or scrollbar lines over forest */
+  html, body, #shell, main, .frame, .page, #t-projects, #pj-list {
+    border: none !important;
+    outline: none !important;
+  }
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+    border: none !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 4px !important;
+    border: none !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  /* Consolidated card styling */
+  .studio-viewport-card {
+    background: rgba(8, 12, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: all .2s ease;
+  }
+  .studio-viewport-card:hover {
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+
 </style>
 </head>
 <body>
@@ -758,30 +797,32 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
   <section class="tab on" id="t-projects">
     <div class="frame page">
       <div id="pj-list">
-        <!-- Unified Minimalist Autonomous Game Studio Card (Matching Mockup) -->
-        <div class="explainer-hero glass-card" id="pj-explainer" style="max-width:790px;margin:14px auto 26px;background:rgba(10,14,20,0.78);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:18px 22px;box-shadow:0 24px 70px rgba(0,0,0,0.8);position:relative;transition:all .3s ease">
+        <!-- Unified Minimalist Autonomous Game Studio Card (Consolidated Master Layout) -->
+        <div class="explainer-hero glass-card" id="pj-explainer" style="max-width:820px;margin:14px auto 30px;background:linear-gradient(180deg, rgba(20,26,36,0.93) 0%, rgba(12,16,24,0.96) 100%);backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:22px 24px;box-shadow:0 24px 70px rgba(0,0,0,0.85);position:relative;transition:all .3s ease">
 
           <!-- Hidden button for toggle compatibility -->
           <button id="btn-zen-fold" style="display:none">Toggle</button>
 
-          <!-- PROMINENT PROMPT COMMAND CENTER (1:1 with Target Mockup) -->
-          <div id="zen-hero-square" class="panel-textured" style="text-align:center;max-width:740px;margin:0 auto 18px;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px 24px">
+          <!-- ==================== 1. HERO COMMAND CENTER ==================== -->
+          <div id="zen-hero-square" class="panel-textured" style="text-align:center;max-width:760px;margin:0 auto 16px;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 22px">
             
-            
-            <!-- Hero Tome Logo with Vibegaming Neon Aura (Tripled in Size) -->
-            <div style="display:flex;justify-content:center;margin-bottom:14px;position:relative">
-              <div style="position:relative;display:inline-flex;align-items:center;justify-content:center;padding:26px;border-radius:50%;background:radial-gradient(circle, rgba(103,58,183,0.4) 0%, rgba(0,188,212,0.22) 45%, rgba(233,30,99,0.15) 65%, transparent 75%);box-shadow:0 0 60px rgba(103,58,183,0.45), 0 0 80px rgba(0,188,212,0.3)">
-                <img class="tome-hero-logo tome-glow" src="tome_logo_transparent.png" alt="Tome: Vibegaming Engine" style="width:215px;height:215px;object-fit:contain;animation:floatTome 4s ease-in-out infinite">
+            <!-- Hero Tome Logo with Vibegaming Neon Aura (3x Size) -->
+            <div style="display:flex;justify-content:center;margin-bottom:12px;position:relative">
+              <div style="position:relative;display:inline-flex;align-items:center;justify-content:center;padding:22px;border-radius:50%;background:radial-gradient(circle, rgba(103,58,183,0.38) 0%, rgba(0,188,212,0.2) 45%, rgba(233,30,99,0.12) 65%, transparent 75%);box-shadow:0 0 50px rgba(103,58,183,0.4), 0 0 70px rgba(0,188,212,0.25)">
+                <img class="tome-hero-logo tome-glow" src="tome_logo_transparent.png" alt="Tome: Vibegaming Engine" style="width:170px;height:170px;object-fit:contain;animation:floatTome 4s ease-in-out infinite">
               </div>
             </div>
+
             <div style="display:inline-flex;align-items:center;gap:6px;padding:3.5px 14px;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:20px;font-size:10.5px;font-weight:700;color:#fbbf24;letter-spacing:.05em;margin-bottom:10px">
               ★ START TYPING A GAME IDEA, GENRE, OR MECHANICS
             </div>
 
-            <h1 style="font-size:23px;font-weight:800;color:#ffffff;letter-spacing:-.02em;margin:0 0 8px;text-align:center">What kind of game would you like to create?</h1>
+            <h1 style="font-size:24px;font-weight:800;color:#ffffff;letter-spacing:-.02em;margin:0 0 8px;line-height:1.2">
+              What kind of game would you like to create?
+            </h1>
             
-            <p style="font-size:11.5px;color:#94a3b8;line-height:1.45;margin:0 auto 16px;max-width:640px;text-align:center">
-              Type anything you want to create below — from a quick game keyword (e.g. <i>"Soulslike"</i>, <i>"Cozy Farm Sim"</i>, <i>"Voxel Miner"</i>) to a full concept. Watch the architecture engine auto-detect your systems, match CC0 assets, and compile your prompt live as you type
+            <p style="font-size:12px;color:#94a3b8;max-width:580px;margin:0 auto 14px;line-height:1.5">
+              Type anything you want to create below — from a quick keyword to a full concept. Watch the architecture engine auto-detect systems, match CC0 assets, and compile your prompt live as you type.
             </p>
 
             <!-- Main High-Prominence Chat / Prompt Input Bar -->
@@ -795,8 +836,8 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
               <input type="file" id="zen-file-input" style="display:none" multiple accept=".glb,.gltf,.obj,.fbx,.png,.jpg,.jpeg,.webp,.svg,.wav,.mp3,.ogg,.txt,.md,.json,.zip">
             </div>
 
-            <!-- Expanded Blatant Suggestions to Get Started (Populates Blueprint List) -->
-            <div id="inspiration-sparks-bar" style="max-width:720px;margin:8px auto 14px;text-align:left">
+            <!-- Expanded Blatant Suggestions to Get Started -->
+            <div id="inspiration-sparks-bar" style="max-width:720px;margin:8px auto 12px;text-align:left">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
                 <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#ffd700;text-transform:uppercase;display:flex;align-items:center;gap:6px">
                   <span>💡</span> SUGGESTIONS TO GET STARTED // CLICK ANY GENRE TO POPULATE BLUEPRINT
@@ -805,7 +846,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
               </div>
 
               <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(215px, 1fr));gap:8px">
-                <!-- 1. 3D Souls -->
                 <div class="blatant-sugg-card souls insp-spark-pill" data-idea="3D Soulslike Action RPG with committed stamina combat, dodge roll i-frames, and boss phases">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#ffd700">🗡️ 3D Souls</span>
@@ -814,7 +854,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                   <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Committed stamina combat, i-frame dodge roll, bonfire spawns &amp; multi-phase bosses.</span>
                 </div>
 
-                <!-- 2. 2D Pixel RPG -->
                 <div class="blatant-sugg-card pixel insp-spark-pill" data-idea="2D Pixel RPG with 16x16 tiles, retro hero walk cycle and village NPCs">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#4ade80">👾 2D Pixel RPG</span>
@@ -823,7 +862,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                   <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">16x16 Dawnbringer tiles, turn-based battle encounters &amp; branching NPC dialogue.</span>
                 </div>
 
-                <!-- 3. Cozy Farm Sim -->
                 <div class="blatant-sugg-card farm insp-spark-pill" data-idea="2D Cozy Farm Sim with daily seasonal clocks and seed-to-harvest crop economy">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#38bdf8">🌾 Cozy Farm Sim</span>
@@ -832,7 +870,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                   <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">15-minute day/night cycle, seasonal crop economy, grid tilemap &amp; watering tools.</span>
                 </div>
 
-                <!-- 4. Sandbox Miner -->
                 <div class="blatant-sugg-card sand insp-spark-pill" data-idea="2D Destructible Sandbox Miner with procedural underground biomes and crafting">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#c084fc">⛏️ Sandbox MMORPG</span>
@@ -841,7 +878,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                   <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Voxel destructible tiles, procedural cave biomes, ore vein discovery &amp; crafting tiers.</span>
                 </div>
 
-                <!-- 5. Cyberpunk Roguelike -->
                 <div class="blatant-sugg-card cyber insp-spark-pill" data-idea="Cyberpunk Roguelike with isometric neon hacking nodes and drone combat">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#00f0ff">🌆 Cyberpunk</span>
@@ -850,7 +886,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                   <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Isometric neon grid, terminal node hacking timer, cyber-deck upgrades &amp; drone waves.</span>
                 </div>
 
-                <!-- 6. Survival Horror -->
                 <div class="blatant-sugg-card horror insp-spark-pill" data-idea="Survival Horror with scarce ammo pools, flashlight raycasts and sanity meter">
                   <div style="display:flex;align-items:center;justify-content:space-between">
                     <span style="font-size:12.5px;font-weight:700;color:#f43f5e">🔦 Survival Horror</span>
@@ -860,14 +895,9 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                 </div>
               </div>
             </div>
-              </div>
-              <span class="badge ok" style="font-size:10px;font-weight:600;padding:3px 10px;border-radius:9999px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.4);color:#34d399">Auto-Detect ON</span>
-            </div>
 
-            <!-- Detected Inspiration Chips Bar -->
-            <div id="zen-detected-chips" style="display:none;flex-wrap:wrap;justify-content:center;gap:8px;max-width:720px;margin:0 auto 10px"></div>
             <!-- Zen Drop Zone & File Detection -->
-            <div id="zen-drop-zone" class="zen-drop-target" style="border:1.5px dashed rgba(255,255,255,0.18);border-radius:12px;padding:12px 18px;max-width:720px;margin:0 auto 12px;background:rgba(5,8,14,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:all .2s ease">
+            <div id="zen-drop-zone" class="zen-drop-target" style="border:1.5px dashed rgba(255,255,255,0.18);border-radius:12px;padding:10px 16px;max-width:720px;margin:0 auto 10px;background:rgba(5,8,14,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:all .2s ease">
               <div style="display:flex;align-items:center;gap:10px">
                 <span style="font-size:16px">🔮</span>
                 <div style="text-align:left">
@@ -879,135 +909,132 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
             </div>
 
             <div id="zen-detected-chips" style="display:flex;flex-wrap:wrap;gap:6px;max-width:720px;margin:0 auto 10px"></div>
-
           </div>
 
-          
-            <!-- CREATED PROJECTS & LIVE VIEWPORTS (Side-by-Side: Projects, Spinning 3D Model, Animated Pixel Sprite) -->
-          <div id="pj-section-inner" style="max-width:740px;margin:18px auto 14px">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-              <div style="display:flex;align-items:center;gap:8px">
-                <h2 style="font-size:13.5px;font-weight:800;color:#ffffff;letter-spacing:.04em;margin:0;border:none">CREATED PROJECTS &amp; VIEWPORTS</h2>
-                <span class="badge ok" style="font-size:10px;padding:2px 7px">READY</span>
-              </div>
-              <button class="btn btn-gold-wood" id="pj-new" style="padding:6px 16px;font-size:11.5px">+ Create New Project</button>
-            </div>
-            <p style="font-size:11px;color:#94a3b8;margin:0 0 12px">Open created blueprints, inspect live rotating 3D meshes, or preview 16-bit animated pixel sprites</p>
-            
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(225px, 1fr));gap:12px;margin-bottom:16px">
+          <!-- ==================== 2. BALANCED SHOWCASE: PROJECTS & LIVE VIEWPORTS ==================== -->
+          <div id="pj-section-inner" style="max-width:760px;margin:0 auto 18px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start">
               
-              <!-- 1. Created Project Preset Card -->
-              <div class="pjgrid" id="pj-grid" style="display:flex;flex-direction:column;gap:12px"></div>
-
-              <!-- 2. Live Interactive Spinning 3D Model Viewer -->
-              <div class="card-textured" style="background:rgba(12,16,24,0.92);border:1px solid rgba(0,188,212,0.35);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,0.55)">
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:12px">🪨</span>
-                    <span style="font-size:11.5px;font-weight:700;color:#00f0ff;letter-spacing:.03em">3D VIEWPORT</span>
-                  </div>
-                  <span class="badge ok" id="three-fps-badge" style="font-size:9.5px;padding:1px 6px">60 FPS</span>
-                </div>
-                
-                <!-- 3D Canvas -->
-                <div style="position:relative;width:100%;height:140px;background:#05070b;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);cursor:grab" id="three-canvas-wrap">
-                  <canvas id="three-model-canvas" width="280" height="140" style="width:100%;height:100%;display:block"></canvas>
-                  <div style="position:absolute;bottom:6px;left:8px;font-size:9.5px;color:rgba(255,255,255,0.45);pointer-events:none;font-family:Consolas,monospace">DRAG TO ORBIT</div>
-                  <div style="position:absolute;bottom:6px;right:8px;display:flex;gap:4px">
-                    <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:4px;font-size:9px;padding:2px 6px;cursor:pointer">WIRE</button>
-                    <button id="btn-3d-mesh" style="background:rgba(0,188,212,0.18);border:1px solid rgba(0,188,212,0.4);color:#00f0ff;border-radius:4px;font-size:9px;padding:2px 6px;cursor:pointer">MESH</button>
-                  </div>
-                </div>
-
-                <div style="font-size:10.5px;color:#94a3b8;line-height:1.3">
-                  <b style="color:#ffffff">Low-Poly Stylized Rock #1</b> // Real-time directional lighting, face normals &amp; ambient occlusion.
-                </div>
-              </div>
-
-              <!-- 3. Live Animated Pixel Sprite Character -->
-              <div class="card-textured" style="background:rgba(12,16,24,0.92);border:1px solid rgba(233,30,99,0.35);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,0.55)">
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:12px">👾</span>
-                    <span style="font-size:11.5px;font-weight:700;color:#f43f5e;letter-spacing:.03em">PIXEL SPRITE</span>
-                  </div>
-                  <span class="badge act" style="font-size:9.5px;padding:1px 6px">16-BIT RETRO</span>
-                </div>
-
-                <!-- Pixel Sprite Canvas -->
-                <div style="position:relative;width:100%;height:140px;background:#05070b;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center" id="sprite-canvas-wrap">
-                  <canvas id="pixel-sprite-canvas" width="160" height="140" style="image-rendering:pixelated;image-rendering:crisp-edges;display:block"></canvas>
-                  <div style="position:absolute;bottom:6px;left:8px;display:flex;gap:4px">
-                    <button id="btn-anim-walk" style="background:rgba(244,63,94,0.2);border:1px solid rgba(244,63,94,0.5);color:#f43f5e;border-radius:4px;font-size:9px;padding:2px 6px;cursor:pointer">WALK</button>
-                    <button id="btn-anim-attack" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:4px;font-size:9px;padding:2px 6px;cursor:pointer">ATTACK</button>
-                    <button id="btn-anim-cast" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:4px;font-size:9px;padding:2px 6px;cursor:pointer">CAST</button>
-                  </div>
-                  <div id="sprite-frame-counter" style="position:absolute;top:6px;right:8px;font-size:9.5px;color:#94a3b8;font-family:Consolas,monospace">FRAME: 1/8</div>
-                </div>
-
-                <div style="font-size:10.5px;color:#94a3b8;line-height:1.3">
-                  <b style="color:#ffffff">Crimson Wanderer Sprite</b> // 8-frame loop at 12fps, pixelated integer scaling.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- PINTEREST-STYLE INSPIRATION GALLERY (Placed directly below Created Projects & Viewports) -->
-<!-- ==================== PINTEREST-STYLE INSPIRATION BOARD & MASONRY GALLERY ==================== -->
-            <div id="insp-board-container" style="max-width:740px;margin:14px auto 16px;text-align:left">
-              
-              <!-- Board Header & Filter Chips -->
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
-                <div style="display:flex;align-items:center;gap:8px">
-                  <span style="font-size:13px;font-weight:800;color:#ffffff;letter-spacing:.03em;display:flex;align-items:center;gap:6px">
-                    <span style="color:#00bcd4">🔮</span> INSPIRATION VAULT &amp; MOODBOARD
-                  </span>
-                  <span id="insp-pinned-count" class="badge" style="font-size:9.5px;background:rgba(233,30,99,0.18);border:1px solid rgba(233,30,99,0.45);color:#ff4081;font-weight:700">0 PINNED</span>
-                </div>
-
-                <div style="display:flex;align-items:center;gap:4px">
-                  <button class="btn gold insp-cat-btn" data-cat="all" style="font-size:10px;padding:3px 9px;border-radius:6px">All (8)</button>
-                  <button class="btn insp-cat-btn" data-cat="char" style="font-size:10px;padding:3px 9px;border-radius:6px">Characters</button>
-                  <button class="btn insp-cat-btn" data-cat="props" style="font-size:10px;padding:3px 9px;border-radius:6px">3D &amp; Rocks</button>
-                  <button class="btn insp-cat-btn" data-cat="env" style="font-size:10px;padding:3px 9px;border-radius:6px">Environments</button>
-                </div>
-              </div>
-
-              <!-- Pinned Board Bar (Appears when items are pinned) -->
-              <div id="pinned-moodboard-bar" style="display:none;background:linear-gradient(90deg, rgba(103,58,183,0.2) 0%, rgba(0,188,212,0.15) 100%);border:1px solid rgba(0,188,212,0.35);border-radius:10px;padding:10px 14px;margin-bottom:12px;box-shadow:0 8px 24px rgba(0,0,0,0.5)">
+              <!-- Left Column: Active Projects -->
+              <div>
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                  <div style="font-size:11.5px;font-weight:700;color:#00e5ff;display:flex;align-items:center;gap:6px">
-                    <span>📌</span> ACTIVE PINNED MOODBOARD
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:12px;font-weight:800;color:#ffffff;letter-spacing:.04em">CREATED PROJECTS</span>
+                    <span class="badge ok" style="font-size:9px;padding:1px 5px">READY</span>
                   </div>
-                  <div style="display:flex;gap:6px">
-                    <button class="btn" id="btn-clear-pinned" style="font-size:10px;padding:3px 8px;color:#94a3b8">Clear Board</button>
-                    <button class="btn" id="btn-synthesize-board" style="font-size:10.5px;padding:4px 12px;font-weight:700;background:linear-gradient(90deg, #00bcd4, #e91e63);color:#ffffff;border:none;border-radius:6px;box-shadow:0 0 12px rgba(0,188,212,0.4)">⚡ START VIBE</button>
-                  </div>
+                  <button class="btn btn-gold-wood" id="pj-new" style="padding:4px 12px;font-size:11px">+ New Project</button>
                 </div>
-                <div id="pinned-items-strip" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px">
-                  <!-- Pinned mini cards rendered by JS -->
+                <div class="pjgrid" id="pj-grid" style="display:flex;flex-direction:column;gap:10px"></div>
+              </div>
+
+              <!-- Right Column: Live Viewports (3D Mesh + Pixel Sprite) -->
+              <div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:12px;font-weight:800;color:#00f0ff;letter-spacing:.04em">LIVE VIEWPORTS</span>
+                    <span class="badge act" style="font-size:9px;padding:1px 5px">INTERACTIVE</span>
+                  </div>
+                  <span style="font-size:10.5px;color:#94a3b8">Real-time Shaders</span>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <!-- 3D Viewport Card -->
+                  <div class="studio-viewport-card">
+                    <div style="display:flex;align-items:center;justify-content:space-between">
+                      <span style="font-size:11px;font-weight:700;color:#00f0ff">🪨 3D MESH</span>
+                      <span class="badge ok" style="font-size:9px;padding:1px 5px">60 FPS</span>
+                    </div>
+                    <div style="position:relative;width:100%;height:115px;background:#05070b;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);cursor:grab" id="three-canvas-wrap">
+                      <canvas id="three-model-canvas" width="220" height="115" style="width:100%;height:100%;display:block"></canvas>
+                      <div style="position:absolute;bottom:4px;right:4px;display:flex;gap:3px">
+                        <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">WIRE</button>
+                        <button id="btn-3d-mesh" style="background:rgba(0,188,212,0.18);border:1px solid rgba(0,188,212,0.4);color:#00f0ff;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">MESH</button>
+                      </div>
+                    </div>
+                    <div style="font-size:9.5px;color:#94a3b8;line-height:1.2">Low-Poly Stylized Rock (Orbit)</div>
+                  </div>
+
+                  <!-- Pixel Sprite Card -->
+                  <div class="studio-viewport-card">
+                    <div style="display:flex;align-items:center;justify-content:space-between">
+                      <span style="font-size:11px;font-weight:700;color:#f43f5e">👾 16-BIT SPRITE</span>
+                      <span class="badge act" style="font-size:9px;padding:1px 5px">12 FPS</span>
+                    </div>
+                    <div style="position:relative;width:100%;height:115px;background:#05070b;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center" id="sprite-canvas-wrap">
+                      <canvas id="pixel-sprite-canvas" width="120" height="115" style="image-rendering:pixelated;display:block"></canvas>
+                      <div style="position:absolute;bottom:4px;left:4px;display:flex;gap:3px">
+                        <button id="btn-anim-walk" style="background:rgba(244,63,94,0.2);border:1px solid rgba(244,63,94,0.5);color:#f43f5e;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">WALK</button>
+                        <button id="btn-anim-attack" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">ATK</button>
+                        <button id="btn-anim-cast" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">CAST</button>
+                      </div>
+                    </div>
+                    <div style="font-size:9.5px;color:#94a3b8;line-height:1.2">Crimson Wanderer Sprite</div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Pinterest Masonry Grid -->
-              <div id="insp-masonry-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(215px, 1fr));gap:10px">
-                <!-- Generated by JS -->
+            </div>
+          </div>
+
+          <!-- ==================== 3. INSPIRATION VAULT & MOODBOARD ==================== -->
+          <div id="insp-board-container" style="max-width:760px;margin:0 auto 18px;text-align:left">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:13.5px">🔮</span>
+                <h3 style="font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#f8fafc;margin:0;text-transform:uppercase;border:none">INSPIRATION VAULT &amp; MOODBOARD</h3>
+                <span id="pinned-count-badge" class="badge act" style="font-size:9.5px;padding:1px 7px">0 PINNED</span>
+              </div>
+              
+              <!-- Category Filter Chips -->
+              <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap" id="insp-filter-chips">
+                <button class="btn on" data-cat="all" style="font-size:10px;padding:3px 10px;border-radius:20px">All (8)</button>
+                <button class="btn" data-cat="char" style="font-size:10px;padding:3px 10px;border-radius:20px">Characters</button>
+                <button class="btn" data-cat="3d" style="font-size:10px;padding:3px 10px;border-radius:20px">3D &amp; Rocks</button>
+                <button class="btn" data-cat="env" style="font-size:10px;padding:3px 10px;border-radius:20px">Environments</button>
               </div>
             </div>
 
-          
+            <!-- Pinned Moodboard Strip -->
+            <div id="pinned-moodboard-bar" style="display:none;background:rgba(103,58,183,0.12);border:1px dashed rgba(103,58,183,0.45);border-radius:10px;padding:8px 12px;margin-bottom:12px;align-items:center;justify-content:space-between;gap:8px">
+              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap" id="pinned-chips-list"></div>
+              <button class="btn gold" id="btn-synthesize-board" style="font-size:11px;font-weight:700;padding:5px 12px;white-space:nowrap;background:linear-gradient(135deg, #ffd700 0%, #b45309 100%);color:#000;border:none;border-radius:6px;box-shadow:0 0 12px rgba(255,215,0,0.3)">⚡ START VIBE</button>
+            </div>
 
-
-          <!-- Discord Branding Icon at Bottom Center -->
-          <div style="text-align:center;margin-top:16px;display:flex;justify-content:center">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#64748b" style="opacity:0.6;cursor:pointer;transition:opacity .2s" title="Discord Community">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
+            <!-- Pinterest-Style Masonry Grid -->
+            <div id="insp-masonry-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));gap:10px"></div>
           </div>
 
-          <!-- Hidden Compatibility Elements for Test Invariants & Dynamic Unfolding -->
+          <!-- ==================== 4. EVER-EVOLVING MASTER AI PROMPT & STARTER ZIP BUNDLE ==================== -->
+          <div id="master-prompt-bundle-console" style="background:linear-gradient(180deg, rgba(8,12,18,0.96) 0%, rgba(4,6,10,0.98) 100%);border:1px solid rgba(56,189,248,0.35);border-radius:14px;padding:16px 18px;margin-top:14px;box-shadow:0 12px 32px rgba(0,0,0,0.6)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:14px">⚡</span>
+                <span style="font-size:12.5px;font-weight:800;color:#00f0ff;letter-spacing:.05em">EVER-EVOLVING MASTER AI PROMPT // ZERO-DEBT SPEC</span>
+              </div>
+              <span class="badge gold" style="font-size:10px;padding:2px 7px">READY FOR AI AGENT</span>
+            </div>
+            <p style="font-size:11px;color:#94a3b8;margin:0 0 10px;line-height:1.4">
+              This master prompt compiles live as you type or pick assets. Download the ready-to-code starter bundle .zip with documentation or copy prompt directly to Claude Code / Codex / Antigravity.
+            </p>
+            <textarea id="dock-preview" rows="5" readonly style="width:100%;background:#020408;border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;color:#38bdf8;font-family:Consolas,monospace;font-size:11px;line-height:1.45;resize:vertical"></textarea>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap">
+              <div style="display:flex;gap:8px">
+                <button class="btn gold" id="btn-dock-download-zip" style="font-size:11.5px;font-weight:700;padding:8px 16px;background:linear-gradient(135deg, #ffd700 0%, #b45309 100%);color:#000;border:none;border-radius:8px;box-shadow:0 4px 14px rgba(255,215,0,0.35)">
+                  📦 Download Starter Bundle (.zip)
+                </button>
+                <button class="btn" id="btn-copy-dock-prompt" style="font-size:11.5px;font-weight:600;padding:8px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:8px">
+                  📋 Copy Master Prompt
+                </button>
+              </div>
+              <button class="btn" id="btn-dock-open-agent" style="font-size:11.5px;font-weight:600;padding:8px 14px;background:rgba(103,58,183,0.2);border:1px solid rgba(103,58,183,0.5);color:#d5b8ff;border-radius:8px">
+                🤖 Launch AI Agent
+              </button>
+            </div>
+          </div>
+
+          <!-- Hidden compatibility hooks for existing script bindings & test suites -->
           <div id="studio-unfolded-hub" style="display:none">
+<div id="asset-sub-drawer"></div><div id="asset-sub-title"></div><div id="asset-sub-options"></div><div id="asset-sub-close"></div><div id="asset-pane-drop-zone"></div><input id="asset-link-input"><button id="asset-link-add-btn"></button><div id="dec-prompt-sel"></div><div id="dec-prompt-preview"></div><div id="dec-preset-scifi"></div><div id="dec-preset-horror"></div><div id="dock-prompt-meta"></div><button id="ide-eng-unreal"></button><button id="ide-open-cdn"></button><div id="dec-copy-prompt"></div><button id="btn-dock-send-agent"></button><div id="sprite-frame-counter"></div>
             <span id="dec-detected-theme">🎯 Detected: 3D Soulslike Action RPG</span>
             <span id="dec-scope-badge" class="badge ok">📐 SCOPE: 24 STEPS</span>
             <select id="engine-quick-select"><option value="unity">Unity C#</option><option value="godot">Godot 4</option><option value="unreal">Unreal 5</option><option value="spawn">Spawn.co</option></select>
@@ -1019,35 +1046,23 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
             </div>
             <div id="game-asset-sheet-card">
               <span id="ash-protagonist-slot"></span><b id="ash-char-name">Tome Guardian [3D Mesh]</b><div id="ash-char-specs"></div><button id="sub-char-btn"></button>
-              <span id="ash-world-slot"></span><b id="ash-env-name">Kenney Castle & Dungeon Kit [3D]</b><b id="ash-world-name">Kenney Castle & Dungeon Kit [3D]</b><div id="ash-env-specs"></div><div id="ash-world-specs"></div><button id="sub-env-btn"></button><button id="sub-world-btn"></button>
-              <span id="ash-ui-slot"></span><b id="ash-ui-name">Retro RPG UI Pack & Borders</b><div id="ash-ui-specs"></div><button id="sub-ui-btn"></button>
-              <span id="ash-audio-slot"></span><b id="ash-audio-name">RPG Audio + Footsteps + Impact SFX</b><div id="ash-audio-specs"></div><button id="sub-audio-btn"></button>
-              <button id="btn-open-manifest"></button><button id="btn-view-asset-sheet"></button>
+              <span id="ash-world-slot"></span><b id="ash-env-name">Kenney Castle &amp; Dungeon Kit [3D]</b><b id="ash-world-name">Kenney Castle &amp; Dungeon Kit [3D]</b><div id="ash-env-specs"></div><div id="ash-world-specs"></div><button id="sub-env-btn"></button><button id="sub-world-btn"></button>
+              <span id="ash-gear-slot"></span><b id="ash-gear-name">Dark Knight Armory [3D]</b><div id="ash-gear-specs"></div><button id="sub-gear-btn"></button>
+              <span id="ash-ui-slot"></span><b id="ash-ui-name">Fantasy UI Borders &amp; HUD</b><div id="ash-ui-specs"></div><button id="sub-ui-btn"></button>
+              <span id="ash-audio-slot"></span><b id="ash-audio-name">Retro RPG Audio &amp; SFX</b><div id="ash-audio-specs"></div><button id="sub-audio-btn"></button>
+              <span id="ash-vis-slot"></span><b id="ash-vis-name">PBR Lit Shaders</b><div id="ash-vis-specs"></div><button id="sub-vis-btn"></button>
             </div>
-            <div id="asset-sub-drawer"><span id="asset-sub-title"></span><div id="asset-sub-options"></div><button id="asset-sub-close"></button></div>
-            <div id="asset-pane-drop-zone"><input id="asset-link-input"><button id="asset-link-add-btn"></button></div>
-            <div id="live-prompt-dock-card">
-              <div id="dock-prompt-meta"></div>
-              <pre id="dec-prompt-preview">[PONYTAIL ARCHITECTURE ENGINE - TARGET: UNITY C#]
-Game Vision: "Action RPG"
-Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
-              <button id="dec-copy-prompt"></button><button id="btn-dock-send-agent"></button>
-            </div>
-          </div>
-
-          <div style="display:none">
-            <button id="dec-preset-scifi"></button><button id="dec-preset-horror"></button>
-            <select id="dec-prompt-sel"></select>
-            <b id="ash-gear-name"></b><div id="ash-gear-specs"></div><button id="sub-gear-btn"></button>
-            <b id="ash-vis-name"></b><div id="ash-vis-specs"></div><button id="sub-vis-btn"></button>
-            <div id="game-asset-sheet"></div>
-            <div id="build-software-hub"></div><button id="btn-download-full-bundle"></button>
+            <button id="btn-download-full-bundle"></button>
+            <button id="btn-view-asset-sheet"></button>
+            <div id="sub-drawer" style="display:none"><div id="sub-drawer-title"></div><div id="sub-drawer-options"></div></div>
+            <div id="dec-vectors-grid"></div>
+            <textarea id="dec-prompt-output" style="display:none"></textarea>
             <div id="evolving-prompt-dock"></div><button id="dock-toggle-btn"></button><div id="dock-body"></div>
-            <button id="btn-dock-download-zip"></button>
             <button id="dec-deconstruct-btn"></button>
-            <button id="ide-eng-unity"></button><button id="ide-eng-godot"></button><button id="ide-eng-spawn"></button><button id="ide-eng-unreal"></button>
+            <button id="ide-eng-unity"></button><button id="ide-eng-godot"></button><button id="ide-eng-spawn"></button>
+            <button id="ide-art-3d"></button><button id="ide-art-2d"></button>
+            <button id="ide-open-cdn-assets"></button>
             <button id="ide-rule-ponytail"></button><button id="ide-rule-rapid"></button>
-            <button id="ide-art-3d"></button><button id="ide-art-2d"></button><button id="ide-open-cdn"></button>
             <button id="ide-ai-claude"></button><button id="ide-ai-codex"></button><button id="ide-ai-ollama"></button>
             <button id="ide-scope-12"></button><button id="ide-scope-24"></button><button id="ide-scope-50"></button>
             <button id="nu-pace-fast"></button><button id="nu-pace-souls"></button><button id="nu-pace-turn"></button>
