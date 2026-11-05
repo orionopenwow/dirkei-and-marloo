@@ -511,7 +511,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
   #pj-explainer, .window-vine-frame {
     border: 11px solid transparent !important;
     border-image-source: url('vine_frame.png') !important;
-    border-image-slice: 36 fill !important;
+    border-image-slice: 36 !important;
     border-image-width: 11px !important;
     border-image-repeat: round !important;
     border-image-outset: 2px !important;
@@ -930,68 +930,108 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
             <div id="zen-detected-chips" style="display:flex;flex-wrap:wrap;gap:6px;max-width:720px;margin:0 auto 10px"></div>
           </div>
 
-          <!-- ==================== 2. BALANCED SHOWCASE: PROJECTS & LIVE VIEWPORTS ==================== -->
-          <div id="pj-section-inner" style="max-width:760px;margin:0 auto 18px">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start">
+          <!-- ==================== 2. BIG LIVE VIEWPORTS ROW (3D Model & Pixel Sprite on their own dedicated row) ==================== -->
+          <div id="viewports-dedicated-row" style="max-width:760px;margin:0 auto 20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:14px">🔮</span>
+                <span style="font-size:13px;font-weight:800;color:#00f0ff;letter-spacing:.05em;text-transform:uppercase">LIVE INTERACTIVE VIEWPORTS</span>
+                <span class="badge ok" style="font-size:9.5px;padding:2px 7px">60 FPS RENDERER</span>
+              </div>
+              <span style="font-size:11px;color:#94a3b8">Real-time Shaders &amp; Pixel Art</span>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
               
-              <!-- Left Column: Active Projects -->
-              <div>
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+              <!-- Big 3D Model Viewport Card -->
+              <div class="studio-viewport-card" style="padding:14px;background:rgba(8,12,18,0.95);border:1px solid rgba(0,188,212,0.3);border-radius:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
                   <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:12px;font-weight:800;color:#ffffff;letter-spacing:.04em">CREATED PROJECTS</span>
-                    <span class="badge ok" style="font-size:9px;padding:1px 5px">READY</span>
+                    <span style="font-size:13px">🪨</span>
+                    <span style="font-size:12px;font-weight:700;color:#00f0ff;letter-spacing:.04em">3D MESH VIEWPORT</span>
                   </div>
-                  <button class="btn btn-gold-wood" id="pj-new" style="padding:4px 12px;font-size:11px">+ New Project</button>
-                </div>
-                <div class="pjgrid" id="pj-grid" style="display:flex;flex-direction:column;gap:10px"></div>
-              </div>
-
-              <!-- Right Column: Live Viewports (3D Mesh + Pixel Sprite) -->
-              <div>
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                  <div style="display:flex;align-items:center;gap:6px">
-                    <span style="font-size:12px;font-weight:800;color:#00f0ff;letter-spacing:.04em">LIVE VIEWPORTS</span>
-                    <span class="badge act" style="font-size:9px;padding:1px 5px">INTERACTIVE</span>
+                  <div style="display:flex;gap:4px">
+                    <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">WIRE</button>
+                    <button id="btn-3d-mesh" style="background:rgba(0,188,212,0.2);border:1px solid rgba(0,188,212,0.5);color:#00f0ff;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">MESH</button>
                   </div>
-                  <span style="font-size:10.5px;color:#94a3b8">Real-time Shaders</span>
                 </div>
 
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-                  <!-- 3D Viewport Card -->
-                  <div class="studio-viewport-card">
-                    <div style="display:flex;align-items:center;justify-content:space-between">
-                      <span style="font-size:11px;font-weight:700;color:#00f0ff">🪨 3D MESH</span>
-                      <span class="badge ok" style="font-size:9px;padding:1px 5px">60 FPS</span>
-                    </div>
-                    <div style="position:relative;width:100%;height:115px;background:#05070b;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);cursor:grab" id="three-canvas-wrap">
-                      <canvas id="three-model-canvas" width="220" height="115" style="width:100%;height:100%;display:block"></canvas>
-                      <div style="position:absolute;bottom:4px;right:4px;display:flex;gap:3px">
-                        <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">WIRE</button>
-                        <button id="btn-3d-mesh" style="background:rgba(0,188,212,0.18);border:1px solid rgba(0,188,212,0.4);color:#00f0ff;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">MESH</button>
-                      </div>
-                    </div>
-                    <div style="font-size:9.5px;color:#94a3b8;line-height:1.2">Low-Poly Stylized Rock (Orbit)</div>
-                  </div>
+                <div style="position:relative;width:100%;height:190px;background:#030508;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);cursor:grab" id="three-canvas-wrap">
+                  <canvas id="three-model-canvas" width="360" height="190" style="width:100%;height:100%;display:block"></canvas>
+                  <div style="position:absolute;bottom:8px;left:10px;font-size:10px;color:rgba(255,255,255,0.45);pointer-events:none;font-family:Consolas,monospace">DRAG TO ORBIT IN 3D</div>
+                </div>
 
-                  <!-- Pixel Sprite Card -->
-                  <div class="studio-viewport-card">
-                    <div style="display:flex;align-items:center;justify-content:space-between">
-                      <span style="font-size:11px;font-weight:700;color:#f43f5e">👾 16-BIT SPRITE</span>
-                      <span class="badge act" style="font-size:9px;padding:1px 5px">12 FPS</span>
-                    </div>
-                    <div style="position:relative;width:100%;height:115px;background:#05070b;border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center" id="sprite-canvas-wrap">
-                      <canvas id="pixel-sprite-canvas" width="120" height="115" style="image-rendering:pixelated;display:block"></canvas>
-                      <div style="position:absolute;bottom:4px;left:4px;display:flex;gap:3px">
-                        <button id="btn-anim-walk" style="background:rgba(244,63,94,0.2);border:1px solid rgba(244,63,94,0.5);color:#f43f5e;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">WALK</button>
-                        <button id="btn-anim-attack" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">ATK</button>
-                        <button id="btn-anim-cast" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:3px;font-size:8.5px;padding:1px 4px;cursor:pointer">CAST</button>
-                      </div>
-                    </div>
-                    <div style="font-size:9.5px;color:#94a3b8;line-height:1.2">Crimson Wanderer Sprite</div>
-                  </div>
+                <div style="font-size:11px;color:#94a3b8;margin-top:6px;line-height:1.3">
+                  <b style="color:#ffffff">Low-Poly Stylized Rock Set #1</b> // Real-time directional lighting, face normals &amp; ambient occlusion.
                 </div>
               </div>
 
+              <!-- Big 16-Bit Animated Pixel Sprite Card -->
+              <div class="studio-viewport-card" style="padding:14px;background:rgba(8,12,18,0.95);border:1px solid rgba(233,30,99,0.3);border-radius:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <span style="font-size:13px">👾</span>
+                    <span style="font-size:12px;font-weight:700;color:#f43f5e;letter-spacing:.04em">16-BIT SPRITE ENGINE</span>
+                  </div>
+                  <div style="display:flex;gap:4px">
+                    <button id="btn-anim-walk" style="background:rgba(244,63,94,0.25);border:1px solid rgba(244,63,94,0.6);color:#f43f5e;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">WALK</button>
+                    <button id="btn-anim-attack" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">ATTACK</button>
+                    <button id="btn-anim-cast" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#cbd5e1;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">CAST</button>
+                  </div>
+                </div>
+
+                <div style="position:relative;width:100%;height:190px;background:#030508;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center" id="sprite-canvas-wrap">
+                  <canvas id="pixel-sprite-canvas" width="240" height="190" style="image-rendering:pixelated;image-rendering:crisp-edges;display:block"></canvas>
+                  <div id="sprite-frame-counter" style="position:absolute;top:8px;right:10px;font-size:10px;color:#94a3b8;font-family:Consolas,monospace">FRAME: 1/8</div>
+                </div>
+
+                <div style="font-size:11px;color:#94a3b8;margin-top:6px;line-height:1.3">
+                  <b style="color:#ffffff">Crimson Wanderer Sprite</b> // 8-frame walk/combat cycle at 12fps, pixel-perfect integer scale.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==================== CURRENT SELECTED PROJECT ARCHITECTURE BUILDER (Builds below 3D & 2D viewports) ==================== -->
+          <div id="active-project-builder-section" style="max-width:760px;margin:0 auto 20px;background:rgba(10,14,22,0.9);border:1px solid rgba(255,215,0,0.3);border-radius:14px;padding:16px 18px;box-shadow:0 12px 32px rgba(0,0,0,0.5)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:16px">👑</span>
+                <span style="font-size:13px;font-weight:800;color:#ffd700;letter-spacing:.04em;text-transform:uppercase">CURRENT SELECTED PROJECT ARCHITECTURE</span>
+                <span class="badge ok" style="font-size:10px;padding:2px 7px">ACTIVE BLUEPRINT</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <button class="btn gold" id="pj-builder-copy-btn" style="padding:5px 12px;font-size:11px;font-weight:600">📋 Copy Project Prompt</button>
+                <button class="btn" id="pj-builder-work-btn" style="padding:5px 12px;font-size:11px;color:var(--cyan);border-color:rgba(0,240,255,0.4)">⚡ Work on Project</button>
+              </div>
+            </div>
+
+            <!-- Project Details Card (Tome: Awakening Preset / Current Game) -->
+            <div style="display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:center;background:#05070b;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px">
+              <div style="position:relative;border-radius:8px;overflow:hidden;background:#0a0e17;height:105px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.06)">
+                <img src="preset_pyramid.png" alt="Tome: Awakening" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover">
+                <div style="position:absolute;top:6px;left:6px;font-size:9px;background:rgba(0,0,0,0.7);padding:2px 6px;border-radius:4px;color:#ffd700;font-weight:700">PRESET</div>
+              </div>
+
+              <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                  <h4 id="builder-proj-name" style="font-size:14px;font-weight:800;color:#ffffff;margin:0">Tome: Awakening (Preset)</h4>
+                  <span class="badge ok" style="font-size:9.5px;padding:1px 6px">VERIFIED BLUEPRINT</span>
+                </div>
+                <div style="font-size:11px;color:#cbd5e1;line-height:1.4;margin-bottom:8px">
+                  <b style="color:var(--cyan)">Target Engine:</b> Unity C# / Godot 4 &bull; <b style="color:var(--gold)">Rules:</b> Ponytail Strict (Zero-GC) &bull; <b style="color:#4ade80">Scope:</b> 32 Modular Steps
+                </div>
+                <pre style="background:#020407;border:1px solid rgba(56,189,248,0.25);border-radius:6px;padding:8px 10px;font-size:10px;color:#38bdf8;font-family:Consolas,monospace;margin:0;line-height:1.4">[TOME: GAME ENGINE // ARCHITECTURE SYSTEM]
+Game: "Tome: Awakening"
+Fixed 60Hz loop with isolated state structs, stamina combat, and bonfire resets.</pre>
+              </div>
+            </div>
+
+            <!-- Hidden compatibility hooks for projects list & creation -->
+            <div id="pj-section-inner" style="display:none">
+              <div class="pjgrid" id="pj-grid"></div>
+              <button class="btn" id="pj-new"></button>
             </div>
           </div>
 
@@ -6135,10 +6175,10 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
     grad.addColorStop(1, 'transparent');
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.ellipse(140, 115, 65, 18, 0, 0, Math.PI * 2);
+    ctx.ellipse(canvas.width / 2, 160, 85, 22, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    const scale = 54;
+    const scale = 72;
     const cosY = Math.cos(yaw), sinY = Math.sin(yaw);
     const cosP = Math.cos(pitch), sinP = Math.sin(pitch);
 
@@ -6160,8 +6200,8 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
       // Perspective projection
       const dist = 3.6;
       const fov = 1.6 / (dist - z2);
-      const px = 140 + x1 * fov * scale;
-      const py = 74 - y2 * fov * scale;
+      const px = (canvas.width / 2) + x1 * fov * scale;
+      const py = (canvas.height / 2) - y2 * fov * scale;
 
       return { px, py, z: z2, rx: x1, ry: y2, rz: z2 };
     });
@@ -6390,15 +6430,15 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
     // Floor shadow
     ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
     ctx.beginPath();
-    ctx.ellipse(80, 122, 34, 9, 0, 0, Math.PI * 2);
+    ctx.ellipse(canvas.width / 2, 168, 48, 12, 0, 0, Math.PI * 2);
     ctx.fill();
 
     // Pick frame
     const fIdx = frame % walkFrames.length;
     const grid = walkFrames[fIdx];
-    const pSize = 5; // 5x scale => 80x80px character
-    const ox = 40;
-    const oy = 22 + (frame % 2 === 0 ? 0 : 2);
+    const pSize = 7; // 7x scale => 112x112px character
+    const ox = Math.round((canvas.width - 16 * pSize) / 2);
+    const oy = 28 + (frame % 2 === 0 ? 0 : 2);
 
     drawPixelGrid(grid, ox, oy, pSize);
 
