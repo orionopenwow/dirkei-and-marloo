@@ -1,20 +1,57 @@
 {
-  "timestamp": "2026-11-05T07:59:46.079Z",
+  "timestamp": "2026-11-05T08:10:56.928Z",
   "summary": {
-    "totalFilesDirkei": 97,
-    "totalFilesMarloo": 97,
-    "modifiedCount": 0,
+    "totalFilesDirkei": 101,
+    "totalFilesMarloo": 101,
+    "modifiedCount": 5,
     "onlyInDirkeiCount": 0,
     "onlyInMarlooCount": 0,
-    "identicalCount": 97
+    "identicalCount": 96
   },
   "git": {
-    "latestCommit": "",
-    "dirkeiCommits": [],
-    "marlooCommits": []
+    "latestCommit": "f9bb262 - feat(marloo): sync 1:1 pixel forest studio UI redesign to Marloo workspace (6 seconds ago) <Camptons.World>",
+    "dirkeiCommits": [
+      "f9bb262 feat(marloo): sync 1:1 pixel forest studio UI redesign to Marloo workspace",
+      "7276a65 feat(collab): initialize dirkei-and-marloo collaborative fork matrix with push isolation, developer console, and diff consolidator"
+    ],
+    "marlooCommits": [
+      "f9bb262 feat(marloo): sync 1:1 pixel forest studio UI redesign to Marloo workspace",
+      "7276a65 feat(collab): initialize dirkei-and-marloo collaborative fork matrix with push isolation, developer console, and diff consolidator"
+    ]
   },
   "differences": {
-    "modifiedFiles": [],
+    "modifiedFiles": [
+      {
+        "file": "app/index.html",
+        "dirkeiSize": 392004,
+        "marlooSize": 380941,
+        "diffSize": 11063
+      },
+      {
+        "file": "app/presets/qd.svg",
+        "dirkeiSize": 2891,
+        "marlooSize": 2889,
+        "diffSize": 2
+      },
+      {
+        "file": "index.html",
+        "dirkeiSize": 392004,
+        "marlooSize": 380941,
+        "diffSize": 11063
+      },
+      {
+        "file": "presets/qd.svg",
+        "dirkeiSize": 2891,
+        "marlooSize": 2889,
+        "diffSize": 2
+      },
+      {
+        "file": "QueensDomain.exe",
+        "dirkeiSize": 7680,
+        "marlooSize": 7680,
+        "diffSize": 0
+      }
+    ],
     "onlyInDirkei": [],
     "onlyInMarloo": []
   },
@@ -73,19 +110,9 @@
         "tag": "Inspiration"
       },
       {
-        "id": "forest-theme",
-        "name": "Atmospheric Forest Backdrop & Glassmorphism",
-        "tag": "Visuals"
-      },
-      {
         "id": "sparks",
         "name": "Instant Inspiration Spark Pills",
         "tag": "UX"
-      },
-      {
-        "id": "created-projects",
-        "name": "Created Projects Gallery with 1-Click Copy & Work",
-        "tag": "Projects"
       },
       {
         "id": "spawn-bridge",
@@ -106,6 +133,17 @@
   },
   "suggestions": {
     "forDirkei": [],
-    "forMarloo": []
+    "forMarloo": [
+      {
+        "feature": "Atmospheric Forest Backdrop & Glassmorphism",
+        "source": "Dirkei",
+        "rationale": "Present in Dirkei but missing in Marloo"
+      },
+      {
+        "feature": "Created Projects Gallery with 1-Click Copy & Work",
+        "source": "Dirkei",
+        "rationale": "Present in Dirkei but missing in Marloo"
+      }
+    ]
   }
 }
