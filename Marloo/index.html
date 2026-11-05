@@ -833,10 +833,6 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
               <img class="tome-hero-logo" src="tome_logo_transparent.png" alt="Tome: Vibegaming Engine" style="width:175px;height:175px;object-fit:contain;animation:floatTome 4s ease-in-out infinite;image-rendering:pixelated;transition:filter .3s ease">
             </div>
 
-            <div style="display:inline-flex;align-items:center;gap:6px;padding:3.5px 14px;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:20px;font-size:10.5px;font-weight:700;color:#fbbf24;letter-spacing:.05em;margin-bottom:10px">
-              ★ START TYPING A GAME IDEA, GENRE, OR MECHANICS
-            </div>
-
             <h1 style="font-size:24px;font-weight:800;color:#ffffff;letter-spacing:-.02em;margin:0 0 8px;line-height:1.2">
               What kind of game would you like to create?
             </h1>
@@ -857,66 +853,105 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
             </div>
 
             <!-- Expanded Blatant Suggestions to Get Started -->
-            <div id="inspiration-sparks-bar" style="max-width:720px;margin:8px auto 12px;text-align:left">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-                <span style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#ffd700;text-transform:uppercase;display:flex;align-items:center;gap:6px">
-                  <span>💡</span> SUGGESTIONS TO GET STARTED // CLICK ANY GENRE TO POPULATE BLUEPRINT
-                </span>
-                <span style="font-size:10.5px;color:#94a3b8">Instant 1-Click Generation</span>
-              </div>
-
-              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(215px, 1fr));gap:8px">
-                <div class="blatant-sugg-card souls insp-spark-pill" data-idea="3D Soulslike Action RPG with committed stamina combat, dodge roll i-frames, and boss phases">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#ffd700">🗡️ 3D Souls</span>
-                    <span class="badge ok" style="font-size:9.5px;padding:1px 6px">32 Steps</span>
+            <div id="inspiration-sparks-bar" style="max-width:760px;margin:12px auto 16px;text-align:left">
+              
+              <!-- Evolving Questionnaire Header -->
+              <div style="background:rgba(8,12,18,0.95);border:1.5px solid rgba(56,189,248,0.3);border-radius:14px;padding:16px 18px;box-shadow:0 8px 30px rgba(0,0,0,0.7)">
+                
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:10px">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <span style="font-size:16px">⚡</span>
+                    <div>
+                      <div style="font-size:12px;font-weight:800;color:#38bdf8;letter-spacing:.06em">EVOLVING GAME ARCHITECTURE QUESTIONNAIRE</div>
+                      <div style="font-size:10px;color:#94a3b8">Interactive questions evolve your prompt and architectural blueprint in real time</div>
+                    </div>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Committed stamina combat, i-frame dodge roll, bonfire spawns &amp; multi-phase bosses.</span>
+                  <div style="display:flex;gap:4px;flex-wrap:wrap">
+                    <span class="q-badge on" data-step="1" style="font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(56,189,248,0.25);color:#38bdf8;border:1px solid rgba(56,189,248,0.5)">1. AGENT</span>
+                    <span class="q-badge on" data-step="2" style="font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(56,189,248,0.25);color:#38bdf8;border:1px solid rgba(56,189,248,0.5)">2. STYLE</span>
+                    <span class="q-badge on" data-step="3" style="font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(56,189,248,0.25);color:#38bdf8;border:1px solid rgba(56,189,248,0.5)">3. ENGINE</span>
+                    <span class="q-badge on" data-step="4" style="font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(56,189,248,0.25);color:#38bdf8;border:1px solid rgba(56,189,248,0.5)">4. MECHANICS</span>
+                    <span class="q-badge on" data-step="5" style="font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(56,189,248,0.25);color:#38bdf8;border:1px solid rgba(56,189,248,0.5)">5. INSPIRATION</span>
+                  </div>
                 </div>
 
-                <div class="blatant-sugg-card pixel insp-spark-pill" data-idea="2D Pixel RPG with 16x16 tiles, retro hero walk cycle and village NPCs">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#4ade80">👾 2D Pixel RPG</span>
-                    <span class="badge act" style="font-size:9.5px;padding:1px 6px">24 Steps</span>
+                <!-- Q1: AI Agent Target -->
+                <div class="q-row" style="margin-bottom:12px">
+                  <div style="font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+                    <span style="color:#fbbf24;font-weight:800">Q1: Target AI Agent / Source</span>
+                    <span style="font-size:10px;color:#64748b">— Who will construct this game with you?</span>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">16x16 Dawnbringer tiles, turn-based battle encounters &amp; branching NPC dialogue.</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <button class="q-pill on" data-cat="agent" data-val="Claude 3.5 Sonnet / Claude Code" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(56,189,248,0.22);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);cursor:pointer;transition:all .15s ease">🤖 Claude 3.5 Sonnet / Claude Code</button>
+                    <button class="q-pill" data-cat="agent" data-val="Own Local LLM (Ollama / Qwen 2.5 Coder)" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">💻 Own Local LLM (Ollama / Qwen)</button>
+                    <button class="q-pill" data-cat="agent" data-val="Cursor / Windsurf AI IDE" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">⚡ Cursor / Windsurf IDE</button>
+                    <button class="q-pill" data-cat="agent" data-val="Antigravity / Gemini 2.0 Pro" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">✨ Antigravity / Gemini 2.0</button>
+                    <button class="q-pill" data-cat="agent" data-val="ChatGPT / OpenAI o3-mini" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🧠 OpenAI o3-mini</button>
+                  </div>
                 </div>
 
-                <div class="blatant-sugg-card farm insp-spark-pill" data-idea="2D Cozy Farm Sim with daily seasonal clocks and seed-to-harvest crop economy">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#38bdf8">🌾 Cozy Farm Sim</span>
-                    <span class="badge" style="font-size:9.5px;padding:1px 6px">18 Steps</span>
+                <!-- Q2: Game Dimension & Visual Style -->
+                <div class="q-row" style="margin-bottom:12px">
+                  <div style="font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+                    <span style="color:#fbbf24;font-weight:800">Q2: Game Dimension & Style</span>
+                    <span style="font-size:10px;color:#64748b">— What graphical paradigm?</span>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">15-minute day/night cycle, seasonal crop economy, grid tilemap &amp; watering tools.</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <button class="q-pill on" data-cat="dim" data-val="3D Low-Poly Stylized" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(56,189,248,0.22);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);cursor:pointer;transition:all .15s ease">🧊 3D Low-Poly Stylized</button>
+                    <button class="q-pill" data-cat="dim" data-val="2D Pixel Art (16-Bit Retro)" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">👾 2D Pixel Art (16-Bit Retro)</button>
+                    <button class="q-pill" data-cat="dim" data-val="2.5D Isometric Grid" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">📐 2.5D Isometric Grid</button>
+                    <button class="q-pill" data-cat="dim" data-val="3D High-Fidelity PBR" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🌄 3D High-Fidelity PBR</button>
+                    <button class="q-pill" data-cat="dim" data-val="Procedural Text / MUD" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">📜 Procedural Text / MUD</button>
+                  </div>
                 </div>
 
-                <div class="blatant-sugg-card sand insp-spark-pill" data-idea="2D Destructible Sandbox Miner with procedural underground biomes and crafting">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#c084fc">⛏️ Sandbox MMORPG</span>
-                    <span class="badge gold" style="font-size:9.5px;padding:1px 6px">28 Steps</span>
+                <!-- Q3: Engine & Programming Level -->
+                <div class="q-row" style="margin-bottom:12px">
+                  <div style="font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+                    <span style="color:#fbbf24;font-weight:800">Q3: Engine & Programming Target</span>
+                    <span style="font-size:10px;color:#64748b">— What tech stack and architectural depth?</span>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Voxel destructible tiles, procedural cave biomes, ore vein discovery &amp; crafting tiers.</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <button class="q-pill on" data-cat="engine" data-val="Unity C# (Zero-GC Architecture)" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(56,189,248,0.22);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);cursor:pointer;transition:all .15s ease">⚔️ Unity C# (Zero-GC Architecture)</button>
+                    <button class="q-pill" data-cat="engine" data-val="Godot 4 (Strictly Typed GDScript)" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🤖 Godot 4 (Strict GDScript)</button>
+                    <button class="q-pill" data-cat="engine" data-val="Spawn / Three.js WebGPU Engine" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🌐 Spawn / Three.js WebGPU</button>
+                    <button class="q-pill" data-cat="engine" data-val="Unreal Engine 5 (C++ Gameplay Framework)" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">⚡ Unreal Engine 5 (C++)</button>
+                    <button class="q-pill" data-cat="engine" data-val="Visual Scripting / Fast Prototype" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🧩 Visual Scripting / Prototype</button>
+                  </div>
                 </div>
 
-                <div class="blatant-sugg-card cyber insp-spark-pill" data-idea="Cyberpunk Roguelike with isometric neon hacking nodes and drone combat">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#00f0ff">🌆 Cyberpunk</span>
-                    <span class="badge ok" style="font-size:9.5px;padding:1px 6px">22 Steps</span>
+                <!-- Q4: Gameplay Mechanics -->
+                <div class="q-row" style="margin-bottom:12px">
+                  <div style="font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+                    <span style="color:#fbbf24;font-weight:800">Q4: Gameplay Core & Mechanics</span>
+                    <span style="font-size:10px;color:#64748b">— What are the primary player systems?</span>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Isometric neon grid, terminal node hacking timer, cyber-deck upgrades &amp; drone waves.</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <button class="q-pill on" data-cat="mech" data-val="Committed Stamina Combat, i-Frame Dodge & Boss Phases" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(56,189,248,0.22);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);cursor:pointer;transition:all .15s ease">🗡️ Stamina Combat & Boss Phases</button>
+                    <button class="q-pill" data-cat="mech" data-val="Cozy Day/Night Cycle, Crop Seasons, Grid Farming & NPC Life" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🌾 Cozy Farm, Crops & NPC Life</button>
+                    <button class="q-pill" data-cat="mech" data-val="Turn-Based Tactical Encounters, Branching Dialogue & Dice Rules" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🎲 Tactical Encounters & Dialogue</button>
+                    <button class="q-pill" data-cat="mech" data-val="Destructible Voxel Blocks, Procedural Mining & Crafting Tiers" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">⛏️ Voxel Mining & Crafting Tiers</button>
+                    <button class="q-pill" data-cat="mech" data-val="Dynamic Flashlight Raycasting, Heartbeat Monitor & Sanity Drain" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🔦 Survival Horror & Sanity Drain</button>
+                  </div>
                 </div>
 
-                <div class="blatant-sugg-card horror insp-spark-pill" data-idea="Survival Horror with scarce ammo pools, flashlight raycasts and sanity meter">
-                  <div style="display:flex;align-items:center;justify-content:space-between">
-                    <span style="font-size:12.5px;font-weight:700;color:#f43f5e">🔦 Survival Horror</span>
-                    <span class="badge red" style="font-size:9.5px;padding:1px 6px">26 Steps</span>
+                <!-- Q5: Aesthetic Vibe & Asset Palette -->
+                <div class="q-row" style="margin-bottom:4px">
+                  <div style="font-size:11px;font-weight:700;color:#f8fafc;margin-bottom:6px;display:flex;align-items:center;gap:6px">
+                    <span style="color:#fbbf24;font-weight:800">Q5: Aesthetic Vibe & CC0 Palette</span>
+                    <span style="font-size:10px;color:#64748b">— What mood and inspiration atmosphere?</span>
                   </div>
-                  <span style="font-size:10.5px;color:#cbd5e1;line-height:1.3">Scarce ammo pools, dynamic flashlight raycasting, heartbeat monitor &amp; sanity drain.</span>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <button class="q-pill on" data-cat="vibe" data-val="Dark Fantasy Medieval Castle & Bonfire Sparks" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(56,189,248,0.22);color:#38bdf8;border:1px solid rgba(56,189,248,0.5);cursor:pointer;transition:all .15s ease">🏰 Dark Fantasy Medieval Ruins</button>
+                    <button class="q-pill" data-cat="vibe" data-val="Cozy Pastoral Dawn, Whispering Pines & Windmills" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🌻 Cozy Pastoral Dawn & Pines</button>
+                    <button class="q-pill" data-cat="vibe" data-val="Neon Cyberpunk Dystopia & Terminal Grid" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🏙️ Neon Cyberpunk & Terminal Grid</button>
+                    <button class="q-pill" data-cat="vibe" data-val="Sunken Eldritch Fog & Cosmic Horror" style="padding:5px 12px;border-radius:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,0.06);color:#cbd5e1;border:1px solid rgba(255,255,255,0.15);cursor:pointer;transition:all .15s ease">🐙 Sunken Eldritch Cosmic Fog</button>
+                  </div>
                 </div>
+
               </div>
             </div>
 
-            <!-- Zen Drop Zone & File Detection -->
             <div id="zen-drop-zone" class="zen-drop-target" style="border:1.5px dashed rgba(255,255,255,0.18);border-radius:12px;padding:10px 16px;max-width:720px;margin:0 auto 10px;background:rgba(5,8,14,0.6);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:all .2s ease">
               <div style="display:flex;align-items:center;gap:10px">
                 <span style="font-size:16px">🔮</span>
@@ -952,7 +987,8 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
                     <span style="font-size:12px;font-weight:700;color:#00f0ff;letter-spacing:.04em">3D MESH VIEWPORT</span>
                   </div>
                   <div style="display:flex;gap:4px">
-                    <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">WIRE</button>
+                    <button id="btn-3d-model-toggle" style="background:rgba(168,85,247,0.25);border:1px solid rgba(168,85,247,0.6);color:#c084fc;border-radius:6px;padding:3px 8px;font-size:10px;font-weight:700;cursor:pointer">MESHY GLB</button>
+                      <button id="btn-3d-wire" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">WIRE</button>
                     <button id="btn-3d-mesh" style="background:rgba(0,188,212,0.2);border:1px solid rgba(0,188,212,0.5);color:#00f0ff;border-radius:4px;font-size:10px;padding:3px 8px;cursor:pointer">MESH</button>
                   </div>
                 </div>
@@ -995,7 +1031,10 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
           </div>
 
           <!-- ==================== CURRENT SELECTED PROJECT ARCHITECTURE BUILDER (Builds below 3D & 2D viewports) ==================== -->
-          <div id="active-project-builder-section" style="max-width:760px;margin:0 auto 20px;background:rgba(10,14,22,0.9);border:1px solid rgba(255,215,0,0.3);border-radius:14px;padding:16px 18px;box-shadow:0 12px 32px rgba(0,0,0,0.5)">
+          <div id="active-project-builder-section">
+            <span id="pj-builder-engine-badge" style="display:none">Unity C#</span>
+            <span id="pj-builder-steps-badge" style="display:none">32 Steps</span>
+            <span id="pj-builder-prompt-snippet" style="display:none">Prompt</span> style="max-width:760px;margin:0 auto 20px;background:rgba(10,14,22,0.9);border:1px solid rgba(255,215,0,0.3);border-radius:14px;padding:16px 18px;box-shadow:0 12px 32px rgba(0,0,0,0.5)">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
               <div style="display:flex;align-items:center;gap:8px">
                 <span style="font-size:16px">👑</span>
@@ -1017,7 +1056,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
 
               <div>
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-                  <h4 id="builder-proj-name" style="font-size:14px;font-weight:800;color:#ffffff;margin:0">Tome: Awakening (Preset)</h4>
+                  <h4 id="builder-proj-name" style="font-size:14px;font-weight:800;color:#ffffff;margin:0"><span id="pj-builder-title">Tome: Awakening (Preset)</span></h4>
                   <span class="badge ok" style="font-size:9.5px;padding:1px 6px">VERIFIED BLUEPRINT</span>
                 </div>
                 <div style="font-size:11px;color:#cbd5e1;line-height:1.4;margin-bottom:8px">
@@ -6072,51 +6111,59 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
 (function init3DSpinningModel() {
   const canvas = document.getElementById('three-model-canvas');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+  const wrap = document.getElementById('three-canvas-wrap');
   let yaw = 0.4, pitch = 0.28, roll = 0;
   let isDragging = false, lastX = 0, lastY = 0;
   let autoRotate = true;
   let wireframeOnly = false;
-  let meshType = 0; // 0 = Stylized Rock, 1 = Arcane Crystal, 2 = Grimoire
+  let modelMode = 'meshy'; // 'meshy' or 'rock'
 
-  // Faceted Stylized Rock 3D Polyhedron (Vertices & Faces)
+  // Model storage
+  let meshyPositions = null;
+  let meshyNormals = null;
+  let meshyIndices = null;
+  let meshyLoaded = false;
+
+  // Attempt to load binary meshy asset
+  fetch('meshy_model.bin')
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.arrayBuffer();
+    })
+    .then(buf => {
+      // Format: 9402 * 3 Float32 positions (112,824 bytes),
+      //         9402 * 3 Float32 normals (112,824 bytes),
+      //         29163 Uint16 indices (58,326 bytes)
+      const vCount = 9402;
+      const iCount = 29163;
+      if (buf.byteLength >= vCount * 12 + vCount * 12 + iCount * 2) {
+        meshyPositions = new Float32Array(buf, 0, vCount * 3);
+        meshyNormals = new Float32Array(buf, vCount * 12, vCount * 3);
+        meshyIndices = new Uint16Array(buf, vCount * 24, iCount);
+        meshyLoaded = true;
+        console.log('Meshy 3D Asset loaded successfully: 9,402 vertices, 9,721 triangles');
+      }
+    })
+    .catch(err => {
+      console.log('Meshy binary fetch notice:', err.message, '- using procedural fallback');
+    });
+
+  // Faceted Stylized Rock Polyhedron (Fallback / Alternate Model)
   const rockVertices = [
-    [-0.8, -0.6, -0.7], [0.8, -0.6, -0.7], [0.9, -0.6, 0.7], [-0.8, -0.6, 0.8], // base 0..3
-    [-1.1, 0.1, -0.9], [1.1, 0.0, -0.8], [1.2, 0.2, 0.9], [-1.0, 0.1, 1.1],   // mid-low 4..7
-    [-0.7, 0.8, -0.6], [0.6, 0.9, -0.5], [0.7, 0.7, 0.6], [-0.8, 0.8, 0.5],   // mid-high 8..11
-    [-0.2, 1.25, -0.1], [0.3, 1.2, 0.1], [0.1, 1.3, -0.2]                       // top crown 12..14
+    [-0.8, -0.6, -0.7], [0.8, -0.6, -0.7], [0.9, -0.6, 0.7], [-0.8, -0.6, 0.8],
+    [-1.1, 0.1, -0.9], [1.1, 0.0, -0.8], [1.2, 0.2, 0.9], [-1.0, 0.1, 1.1],
+    [-0.7, 0.8, -0.6], [0.6, 0.9, -0.5], [0.7, 0.7, 0.6], [-0.8, 0.8, 0.5],
+    [-0.2, 1.25, -0.1], [0.3, 1.2, 0.1], [0.1, 1.3, -0.2]
   ];
 
   const rockFaces = [
-    // Bottom
     [0, 2, 1], [0, 3, 2],
-    // Mid facets
     [0, 1, 5], [0, 5, 4], [1, 2, 6], [1, 6, 5], [2, 3, 7], [2, 7, 6], [3, 0, 4], [3, 4, 7],
-    // Upper facets
     [4, 5, 9], [4, 9, 8], [5, 6, 10], [5, 10, 9], [6, 7, 11], [6, 11, 10], [7, 4, 8], [7, 8, 11],
-    // Crown
     [8, 9, 13], [8, 13, 12], [9, 10, 13], [10, 11, 14], [10, 14, 13], [11, 8, 12], [11, 12, 14], [12, 13, 14]
   ];
 
-  // Palette: Stylized warm stone (#dcb37b) with deep slate ambient and cyan specular
-  const lightDir = normalize([0.55, 0.8, 0.5]);
-
-  function normalize(v) {
-    const len = Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]) || 1;
-    return [v[0]/len, v[1]/len, v[2]/len];
-  }
-
-  function cross(a, b) {
-    return [
-      a[1]*b[2] - a[2]*b[1],
-      a[2]*b[0] - a[0]*b[2],
-      a[0]*b[1] - a[1]*b[0]
-    ];
-  }
-
-  function sub(a, b) { return [a[0]-b[0], a[1]-b[1], a[2]-b[2]]; }
-
-  const wrap = document.getElementById('three-canvas-wrap');
+  // Mouse Orbit Drag Controls
   if (wrap) {
     wrap.onmousedown = (e) => {
       isDragging = true;
@@ -6139,133 +6186,247 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
       if (isDragging) {
         isDragging = false;
         if (wrap) wrap.style.cursor = 'grab';
-        setTimeout(() => { autoRotate = true; }, 3000);
+        setTimeout(() => { autoRotate = true; }, 2500);
       }
     });
   }
 
+  // Button Toggles
   const btnWire = document.getElementById('btn-3d-wire');
-  if (btnWire) {
+  const btnMesh = document.getElementById('btn-3d-mesh');
+  const btnToggle = document.getElementById('btn-3d-model-toggle');
+
+  if (btnWire && btnMesh) {
     btnWire.onclick = (e) => {
       e.stopPropagation();
-      wireframeOnly = !wireframeOnly;
-      btnWire.style.borderColor = wireframeOnly ? '#00f0ff' : 'rgba(255,255,255,0.2)';
-      btnWire.style.color = wireframeOnly ? '#00f0ff' : '#fff';
+      wireframeOnly = true;
+      btnWire.style.background = 'rgba(0,188,212,0.25)';
+      btnWire.style.borderColor = 'rgba(0,188,212,0.6)';
+      btnWire.style.color = '#00f0ff';
+      btnMesh.style.background = 'rgba(255,255,255,0.08)';
+      btnMesh.style.borderColor = 'rgba(255,255,255,0.2)';
+      btnMesh.style.color = '#cbd5e1';
     };
-  }
-
-  const btnMesh = document.getElementById('btn-3d-mesh');
-  if (btnMesh) {
     btnMesh.onclick = (e) => {
       e.stopPropagation();
-      meshType = (meshType + 1) % 2;
-      toast(meshType === 0 ? '3D MESH: STYLIZED ROCK' : '3D MESH: ARCANE CRYSTAL');
+      wireframeOnly = false;
+      btnMesh.style.background = 'rgba(0,188,212,0.25)';
+      btnMesh.style.borderColor = 'rgba(0,188,212,0.6)';
+      btnMesh.style.color = '#00f0ff';
+      btnWire.style.background = 'rgba(255,255,255,0.08)';
+      btnWire.style.borderColor = 'rgba(255,255,255,0.2)';
+      btnWire.style.color = '#cbd5e1';
     };
   }
 
-  function render3D() {
+  if (btnToggle) {
+    btnToggle.onclick = (e) => {
+      e.stopPropagation();
+      if (modelMode === 'meshy') {
+        modelMode = 'rock';
+        btnToggle.textContent = 'ROCK #1';
+        btnToggle.style.color = '#fbbf24';
+        btnToggle.style.borderColor = 'rgba(251,191,36,0.6)';
+        btnToggle.style.background = 'rgba(251,191,36,0.25)';
+      } else {
+        modelMode = 'meshy';
+        btnToggle.textContent = 'MESHY GLB';
+        btnToggle.style.color = '#c084fc';
+        btnToggle.style.borderColor = 'rgba(168,85,247,0.6)';
+        btnToggle.style.background = 'rgba(168,85,247,0.25)';
+      }
+    };
+  }
+
+  // 3D Matrix Math & Rendering
+  const ctx = canvas.getContext('2d');
+  const lightDir = [0.55, 0.8, 0.5];
+  const lLen = Math.hypot(lightDir[0], lightDir[1], lightDir[2]) || 1;
+  const normLight = [lightDir[0]/lLen, lightDir[1]/lLen, lightDir[2]/lLen];
+
+  function render() {
     if (autoRotate) {
-      yaw += 0.014;
+      yaw += 0.012;
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const w = canvas.width;
+    const h = canvas.height;
+    const cx = w / 2;
+    const cy = h / 2;
 
-    // Subtle radial floor shadow
-    const grad = ctx.createRadialGradient(140, 115, 10, 140, 115, 65);
-    grad.addColorStop(0, 'rgba(0, 0, 0, 0.7)');
-    grad.addColorStop(1, 'transparent');
-    ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.ellipse(canvas.width / 2, 160, 85, 22, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    const scale = 72;
     const cosY = Math.cos(yaw), sinY = Math.sin(yaw);
     const cosP = Math.cos(pitch), sinP = Math.sin(pitch);
 
-    // Rotate and project vertices
-    const projected = rockVertices.map(v => {
-      let x = v[0], y = v[1], z = v[2];
-      if (meshType === 1) { // Arcane Crystal variant
-        x *= 0.75;
-        y *= 1.35;
-        z *= 0.75;
+    if (modelMode === 'meshy' && meshyLoaded) {
+      // Render Meshy 3D Asset
+      const fov = 340;
+      const camZ = 3.2;
+      const scale = 1.35;
+      const numTriangles = meshyIndices.length / 3;
+
+      // Project vertices to screen coordinates
+      const vCount = meshyPositions.length / 3;
+      const projX = new Float32Array(vCount);
+      const projY = new Float32Array(vCount);
+      const projZ = new Float32Array(vCount);
+
+      for (let i = 0; i < vCount; i++) {
+        const x0 = meshyPositions[i * 3];
+        const y0 = meshyPositions[i * 3 + 1];
+        const z0 = meshyPositions[i * 3 + 2];
+
+        // Yaw (around Y)
+        const x1 = x0 * cosY + z0 * sinY;
+        const z1 = -x0 * sinY + z0 * cosY;
+
+        // Pitch (around X)
+        const y2 = y0 * cosP - z1 * sinP;
+        const z2 = y0 * sinP + z1 * cosP;
+
+        const dist = z2 + camZ;
+        const pers = dist > 0.1 ? (fov / dist) * scale : 0;
+        projX[i] = cx + x1 * pers;
+        projY[i] = cy - y2 * pers;
+        projZ[i] = z2;
       }
-      // Yaw (Y axis)
-      const x1 = x * cosY - z * sinY;
-      const z1 = x * sinY + z * cosY;
-      // Pitch (X axis)
-      const y2 = y * cosP - z1 * sinP;
-      const z2 = y * sinP + z1 * cosP;
 
-      // Perspective projection
-      const dist = 3.6;
-      const fov = 1.6 / (dist - z2);
-      const px = (canvas.width / 2) + x1 * fov * scale;
-      const py = (canvas.height / 2) - y2 * fov * scale;
+      // Draw wireframe or shaded faces
+      if (wireframeOnly) {
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.45)';
+        ctx.lineWidth = 0.7;
+        ctx.beginPath();
+        const step = 2; // Step for high performance
+        for (let t = 0; t < numTriangles; t += step) {
+          const i0 = meshyIndices[t * 3];
+          const i1 = meshyIndices[t * 3 + 1];
+          const i2 = meshyIndices[t * 3 + 2];
+          if (projZ[i0] < 0 && projZ[i1] < 0 && projZ[i2] < 0) continue; // Back-face culling
+          ctx.moveTo(projX[i0], projY[i0]);
+          ctx.lineTo(projX[i1], projY[i1]);
+          ctx.lineTo(projX[i2], projY[i2]);
+          ctx.closePath();
+        }
+        ctx.stroke();
+      } else {
+        // Shaded surface with normal lighting
+        const triList = [];
+        const step = 1;
+        for (let t = 0; t < numTriangles; t += step) {
+          const i0 = meshyIndices[t * 3];
+          const i1 = meshyIndices[t * 3 + 1];
+          const i2 = meshyIndices[t * 3 + 2];
 
-      return { px, py, z: z2, rx: x1, ry: y2, rz: z2 };
-    });
+          // Face normal & backface cull in 2D
+          const ax = projX[i1] - projX[i0], ay = projY[i1] - projY[i0];
+          const bx = projX[i2] - projX[i0], by = projY[i2] - projY[i0];
+          const cross2D = ax * by - ay * bx;
+          if (cross2D <= 0) continue; // Face pointing away
 
-    // Face sorting by avg depth (Painter's algorithm)
-    const sortedFaces = rockFaces.map(face => {
-      const v0 = projected[face[0]];
-      const v1 = projected[face[1]];
-      const v2 = projected[face[2]];
-      const avgZ = (v0.z + v1.z + v2.z) / 3;
+          const avgZ = (projZ[i0] + projZ[i1] + projZ[i2]) / 3;
+          triList.push({ i0, i1, i2, z: avgZ });
+        }
 
-      // Normal vector in 3D
-      const e1 = sub([v1.rx, v1.ry, v1.rz], [v0.rx, v0.ry, v0.rz]);
-      const e2 = sub([v2.rx, v2.ry, v2.rz], [v0.rx, v0.ry, v0.rz]);
-      const normal = normalize(cross(e1, e2));
+        // Sort back-to-front
+        triList.sort((a, b) => a.z - b.z);
 
-      return { face, avgZ, normal, v0, v1, v2 };
-    });
+        for (let k = 0; k < triList.length; k++) {
+          const { i0, i1, i2 } = triList[k];
+          // Use normal from first vertex
+          const nx0 = meshyNormals[i0 * 3];
+          const ny0 = meshyNormals[i0 * 3 + 1];
+          const nz0 = meshyNormals[i0 * 3 + 2];
+          const nx = nx0 * cosY + nz0 * sinY;
+          const nz = -nx0 * sinY + nz0 * cosY;
+          const ny = ny0 * cosP - nz * sinP;
 
-    sortedFaces.sort((a, b) => a.avgZ - b.avgZ);
+          const dot = Math.max(0.12, nx * normLight[0] + ny * normLight[1] + nz * normLight[2]);
+          const r = Math.round(180 * dot + 25);
+          const g = Math.round(140 * dot + 22);
+          const b = Math.round(200 * dot + 35);
 
-    sortedFaces.forEach(f => {
-      // Backface culling
-      if (f.normal[2] < -0.05) return;
-
-      const dot = Math.max(0, f.normal[0]*lightDir[0] + f.normal[1]*lightDir[1] + f.normal[2]*lightDir[2]);
-      
-      ctx.beginPath();
-      ctx.moveTo(f.v0.px, f.v0.py);
-      ctx.lineTo(f.v1.px, f.v1.py);
-      ctx.lineTo(f.v2.px, f.v2.py);
-      ctx.closePath();
-
-      if (!wireframeOnly) {
-        if (meshType === 0) {
-          // Warm Stylized Rock Shading
-          const r = Math.round(130 + dot * 95);
-          const g = Math.round(105 + dot * 80);
-          const b = Math.round(78 + dot * 55);
-          ctx.fillStyle = `rgb(${r},${g},${b})`;
-          ctx.fill();
-        } else {
-          // Arcane Crystal Shading (#673AB7 to #00BCD4)
-          const r = Math.round(75 + dot * 60);
-          const g = Math.round(45 + dot * 120);
-          const b = Math.round(160 + dot * 95);
-          ctx.fillStyle = `rgba(${r},${g},${b}, 0.88)`;
+          ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+          ctx.beginPath();
+          ctx.moveTo(projX[i0], projY[i0]);
+          ctx.lineTo(projX[i1], projY[i1]);
+          ctx.lineTo(projX[i2], projY[i2]);
+          ctx.closePath();
           ctx.fill();
         }
       }
 
-      // Edge line
-      ctx.strokeStyle = wireframeOnly 
-        ? '#00f0ff' 
-        : (meshType === 0 ? 'rgba(60, 45, 30, 0.45)' : 'rgba(0, 240, 255, 0.4)');
-      ctx.lineWidth = wireframeOnly ? 1.2 : 0.8;
-      ctx.stroke();
-    });
+    } else {
+      // Render Stylized Rock Polyhedron
+      const fov = 1.35;
+      const camZ = 3.5;
+      const scale = 72;
 
-    requestAnimationFrame(render3D);
+      const proj = rockVertices.map(v => {
+        const x1 = v[0] * cosY + v[2] * sinY;
+        const z1 = -v[0] * sinY + v[2] * cosY;
+        const y2 = v[1] * cosP - z1 * sinP;
+        const z2 = v[1] * sinP + z1 * cosP;
+        const dist = z2 + camZ;
+        const px = cx + (x1 / dist) * fov * scale;
+        const py = cy - (y2 / dist) * fov * scale;
+        return { x: px, y: py, z: z2 };
+      });
+
+      const sortedFaces = rockFaces.map((f, idx) => {
+        const z = (proj[f[0]].z + proj[f[1]].z + proj[f[2]].z) / 3;
+        return { f, z, idx };
+      }).sort((a, b) => a.z - b.z);
+
+      sortedFaces.forEach(item => {
+        const f = item.f;
+        const p0 = proj[f[0]], p1 = proj[f[1]], p2 = proj[f[2]];
+        const crossZ = (p1.x - p0.x) * (p2.y - p0.y) - (p1.y - p0.y) * (p2.x - p0.x);
+        if (crossZ >= 0) return;
+
+        const v0 = rockVertices[f[0]], v1 = rockVertices[f[1]], v2 = rockVertices[f[2]];
+        const e1 = [v1[0] - v0[0], v1[1] - v0[1], v1[2] - v0[2]];
+        const e2 = [v2[0] - v0[0], v2[1] - v0[1], v2[2] - v0[2]];
+        const fn = [
+          e1[1] * e2[2] - e1[2] * e2[1],
+          e1[2] * e2[0] - e1[0] * e2[2],
+          e1[0] * e2[1] - e1[1] * e2[0]
+        ];
+        const fnLen = Math.hypot(fn[0], fn[1], fn[2]) || 1;
+        const fnx = fn[0] / fnLen, fny = fn[1] / fnLen, fnz = fn[2] / fnLen;
+
+        const rnx = fnx * cosY + fnz * sinY;
+        const rnz = -fnx * sinY + fnz * cosY;
+        const rny = fny * cosP - rnz * sinP;
+        const diff = Math.max(0.15, rnx * normLight[0] + rny * normLight[1] + rnz * normLight[2]);
+
+        const r = Math.round(220 * diff);
+        const g = Math.round(180 * diff);
+        const b = Math.round(125 * diff);
+
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.closePath();
+
+        if (wireframeOnly) {
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.7)';
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        } else {
+          ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      });
+    }
+
+    requestAnimationFrame(render);
   }
 
-  render3D();
+  requestAnimationFrame(render);
 })();
 
 // ============================================================================
@@ -6464,6 +6625,131 @@ loadProject(store.active);render();getHW().then(h=>h&&!PJ.preset&&render());engS
 
   requestAnimationFrame(loop);
 })();
+
+// ============================================================================
+// EVOLVING QUESTIONNAIRE & REAL-TIME PROMPT COMPILER
+// ============================================================================
+(function initEvolvingQuestionnaireEngine() {
+  const state = {
+    agent: 'Claude 3.5 Sonnet / Claude Code',
+    dim: '3D Low-Poly Stylized',
+    engine: 'Unity C# (Zero-GC Architecture)',
+    mech: 'Committed Stamina Combat, i-Frame Dodge & Boss Phases',
+    vibe: 'Dark Fantasy Medieval Castle & Bonfire Sparks',
+    userQuery: ''
+  };
+
+  const dockPreview = document.getElementById('dock-preview');
+  const decQuery = document.getElementById('dec-query');
+  const activeTitle = document.getElementById('pj-builder-title');
+  const activeEngineBadge = document.getElementById('pj-builder-engine-badge');
+  const activeStepsBadge = document.getElementById('pj-builder-steps-badge');
+  const activePromptSnippet = document.getElementById('pj-builder-prompt-snippet');
+
+  function compileMasterPrompt() {
+    const title = state.userQuery.trim() || (state.dim.split(' ')[0] + ' ' + state.vibe.split(' ')[0] + ' Experience');
+    const is3D = state.dim.includes('3D');
+    const stepsCount = is3D ? 32 : 24;
+
+    const compiled = `[TOME: GAME ENGINE // ZERO-DEBT MASTER BLUEPRINT]
+Project: "${title}"
+Target AI Agent: ${state.agent}
+Visual Paradigm: ${state.dim}
+Target Engine: ${state.engine}
+Core Mechanics: ${state.mech}
+Aesthetic & Vibe: ${state.vibe}
+
+================================================================================
+SECTION 1: ZERO-DEBT ARCHITECTURAL DIRECTIVES FOR ${state.agent}
+================================================================================
+1. STRICT ZERO-ALLOCATION IN 60HZ TICK PATHS:
+   - All particle bursts, projectile pools, physics raycasts, and state structs pre-allocated at boot.
+   - Zero Garbage Collector allocations inside Update() / FixedUpdate() / physics ticks.
+   - Deterministic 60Hz tick loop with fixed delta-time accumulator.
+
+2. ISOLATED STATE STRUCTS & DATA-DRIVEN SCHEMAS:
+   - Core gameplay state decoupled from renderer presentation and audio dispatch.
+   - Pure plain-old-data (POD) component structs for player, inventory, health, stamina, and combat states.
+
+3. MODULAR ${stepsCount}-STEP VERIFIED BREAKDOWN:
+   - Step 1..8: Input abstraction, virtual axes, character controller, and collision bounds.
+   - Step 9..16: Core gameplay loop (${state.mech}), resource bars, and animation state transitions.
+   - Step 17..24: CC0 asset instantiation (${state.vibe}), particle vfx pools, and dynamic camera rig.
+   ${is3D ? '- Step 25..32: Boss encounter FSM, pathfinding, save-state serialization, and headless verification suite.\n' : ''}
+================================================================================
+SECTION 2: IMPLEMENTATION PROTOCOL
+================================================================================
+- Write pure, fully compiled, self-contained code modules for Step 1 first.
+- Every module must include executable acceptance assertions.
+- Do not emit placeholder stubs or '// TODO' markers.`;
+
+    if (dockPreview) {
+      dockPreview.value = compiled;
+    }
+
+    if (activeTitle) {
+      activeTitle.textContent = 'Active Project: ' + title;
+    }
+    if (activeEngineBadge) {
+      activeEngineBadge.textContent = state.engine.split('(')[0].trim();
+    }
+    if (activeStepsBadge) {
+      activeStepsBadge.textContent = stepsCount + ' STEPS';
+    }
+    if (activePromptSnippet) {
+      activePromptSnippet.textContent = `[TOME: ${state.engine.split('(')[0].trim().toUpperCase()}] Game: "${title}" // ${state.dim} // ${state.mech}`;
+    }
+  }
+
+  // Hook questionnaire pills
+  const pills = document.querySelectorAll('.q-pill');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const cat = pill.getAttribute('data-cat');
+      const val = pill.getAttribute('data-val');
+      if (!cat || !val) return;
+
+      // Unselect siblings
+      const parentRow = pill.closest('.q-row');
+      if (parentRow) {
+        parentRow.querySelectorAll('.q-pill').forEach(p => {
+          p.classList.remove('on');
+          p.style.background = 'rgba(255,255,255,0.06)';
+          p.style.color = '#cbd5e1';
+          p.style.borderColor = 'rgba(255,255,255,0.15)';
+        });
+      }
+
+      // Select clicked pill
+      pill.classList.add('on');
+      pill.style.background = 'rgba(56,189,248,0.25)';
+      pill.style.color = '#38bdf8';
+      pill.style.borderColor = 'rgba(56,189,248,0.6)';
+
+      state[cat] = val;
+
+      // Update dec-query if it was empty or matches template
+      if (decQuery && (!decQuery.value || decQuery.value.includes('with') || decQuery.value.includes('3D') || decQuery.value.includes('2D'))) {
+        decQuery.value = `${state.dim.split(' ')[0]} ${state.vibe.split(' ')[0]} with ${state.mech.split(',')[0].toLowerCase()}`;
+        state.userQuery = decQuery.value;
+      }
+
+      compileMasterPrompt();
+    });
+  });
+
+  // Real-time input synchronization
+  if (decQuery) {
+    decQuery.addEventListener('input', (e) => {
+      state.userQuery = e.target.value;
+      compileMasterPrompt();
+    });
+  }
+
+  // Initialize master prompt immediately
+  compileMasterPrompt();
+})();
+
 </script>
 </body>
 </html>
