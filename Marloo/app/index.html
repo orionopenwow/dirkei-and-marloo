@@ -358,16 +358,20 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
     filter: brightness(1.2);
   }
 
-  /* Accurate Panel Texture from Asset Sheet */
+  /* Solid Gunmetal Slate Gradient Panels (Smooth Matte Glass) */
   .panel-textured {
-    background: #121822 url('panel_texture.jpg') repeat !important;
-    background-size: 260px 90px !important;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+    background: linear-gradient(180deg, rgba(28, 36, 48, 0.95) 0%, rgba(18, 24, 33, 0.95) 45%, rgba(11, 15, 22, 0.97) 100%) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   }
   .card-textured {
-    background: #0f151e url('panel_texture.jpg') repeat !important;
-    background-size: 260px 90px !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+    background: linear-gradient(180deg, rgba(24, 31, 42, 0.95) 0%, rgba(16, 21, 29, 0.95) 50%, rgba(10, 14, 20, 0.97) 100%) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   }
   .btn-gold-wood {
     background: linear-gradient(180deg, #3d2a10 0%, #291c0a 100%) !important;
