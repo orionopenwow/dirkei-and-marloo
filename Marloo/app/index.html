@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tome: Vibegaming Engine // Technical Architecture &amp; Asset Studio</title>
+<title>&#8203;</title>
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -996,35 +996,34 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
     <div class="frame page">
       <div id="pj-list">
         <!-- Unified Minimalist Autonomous Game Studio Card (Consolidated Master Layout) -->
-        <div class="explainer-hero" id="pj-explainer" style="max-width:1280px;width:94vw;height:calc(100vh - 24px);max-height:calc(100vh - 24px);margin:12px auto;padding:0;background:linear-gradient(180deg, rgba(20,26,36,0.98) 0%, rgba(12,16,24,0.99) 100%);backdrop-filter:blur(24px) saturate(160%);border:11px solid transparent;border-radius:0;box-shadow:0 24px 70px rgba(0,0,0,0.85);position:relative;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;transition:all .3s ease">
-<header id="top-nav-bar">
-    <!-- Left: Traffic Light Window Buttons + Winged Tome Brand -->
-    <div style="display:flex;align-items:center;gap:12px">
-      <!-- Traffic Light Circles (Red Close, Yellow Minimize, Green Maximize) -->
-      <div id="window-traffic-lights" style="display:flex;align-items:center;gap:8px;padding-right:8px;border-right:1px solid rgba(255,255,255,0.1)">
-        <button id="win-btn-close" title="Close" aria-label="Close" style="width:13px;height:13px;border-radius:50%;background:#ff5f56;border:1px solid #e0443e;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(255,95,86,0.45);transition:all .15s ease">
-          <span class="light-icon" style="opacity:0;font-size:8px;font-weight:900;color:#5a0000;line-height:1;transition:opacity .15s">✕</span>
-        </button>
-        <button id="win-btn-min" title="Minimize / Compact View" aria-label="Minimize" style="width:13px;height:13px;border-radius:50%;background:#ffbd2e;border:1px solid #dea123;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(255,189,46,0.45);transition:all .15s ease">
-          <span class="light-icon" style="opacity:0;font-size:10px;font-weight:900;color:#613b00;line-height:1;transition:opacity .15s">−</span>
-        </button>
-        <button id="win-btn-max" title="Maximize / Toggle Fullscreen" aria-label="Maximize" style="width:13px;height:13px;border-radius:50%;background:#27c93f;border:1px solid #1aab29;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(39,201,63,0.45);transition:all .15s ease">
-          <span class="light-icon" style="opacity:0;font-size:8px;font-weight:900;color:#004d11;line-height:1;transition:opacity .15s">⤢</span>
-        </button>
-      </div>
-
-      <!-- Winged Tome Brand / Menu Toggle -->
-      <div id="top-menu-btn" title="Toggle Tome System Menu (Alt+M)" style="display:flex;align-items:center;gap:12px;cursor:pointer;padding:2px 6px;border-radius:10px;transition:all .2s ease;user-select:none">
-        <img src="tome_logo_transparent.png" alt="Tome" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 0 16px rgba(103,58,183,0.65));transition:transform .2s ease">
-        <img src="tome_header_text.png" alt="Tome: Vibegaming Engine" style="height:64px;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.7))">
+        <div class="explainer-hero" id="pj-explainer" style="max-width:1560px;width:calc(100vw - 24px);height:calc(100vh - 24px);max-height:calc(100vh - 24px);margin:12px auto;padding:0;background:linear-gradient(180deg, rgba(20,26,36,0.98) 0%, rgba(12,16,24,0.99) 100%);backdrop-filter:blur(24px) saturate(160%);border:11px solid transparent;border-radius:0;box-shadow:0 24px 70px rgba(0,0,0,0.85);position:relative;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;transition:all .3s ease">
+<header id="top-nav-bar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(8,12,18,0.92);border-bottom:1px solid rgba(255,255,255,0.08);user-select:none">
+    <!-- Left: Winged Tome Brand Logo & System Menu Toggle -->
+    <div style="display:flex;align-items:center;gap:14px">
+      <div id="top-menu-btn" title="Toggle Tome System Menu (Alt+M)" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:2px 6px;border-radius:10px;transition:all .2s ease">
+        <img src="tome_logo_transparent.png" alt="Tome" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(103,58,183,0.65));transition:transform .2s ease">
+        <img src="tome_header_text.png" alt="Tome: Vibegaming Engine" style="height:38px;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.7))">
       </div>
     </div>
 
-    <!-- Right: Projects, Settings, Dev Console -->
-    <div style="display:flex;align-items:center;gap:8px">
+    <!-- Center / Actions: Projects, Settings, Dev Console -->
+    <div style="display:flex;align-items:center;gap:10px;margin-left:auto;margin-right:16px">
       <button class="top-header-btn" id="top-btn-projects" style="padding:6px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.03em;cursor:pointer;background:rgba(251,191,36,0.14);border:1px solid rgba(251,191,36,0.38);color:#fbbf24;transition:all .2s ease;display:flex;align-items:center;gap:6px">📁 PROJECTS</button>
       <button class="top-header-btn" id="top-btn-settings" style="padding:6px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.03em;cursor:pointer;background:rgba(148,163,184,0.12);border:1px solid rgba(148,163,184,0.28);color:#cbd5e1;transition:all .2s ease;display:flex;align-items:center;gap:6px">⚙️ SETTINGS</button>
       <button class="top-header-btn" id="top-btn-dev" style="padding:6px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:.03em;cursor:pointer;background:rgba(16,185,129,0.14);border:1px solid rgba(16,185,129,0.4);color:#34d399;transition:all .2s ease;display:flex;align-items:center;gap:6px">★ DEV CONSOLE</button>
+    </div>
+
+    <!-- Far Top-Right Corner: Unified Window Controls (Yellow Minimize, Green Maximize, Red Close) -->
+    <div id="window-traffic-lights" style="display:flex;align-items:center;gap:8px;padding-left:14px;border-left:1px solid rgba(255,255,255,0.12)">
+      <button id="win-btn-min" title="Minimize / Collapse" aria-label="Minimize" style="width:13px;height:13px;border-radius:50%;background:#ffbd2e;border:1px solid #dea123;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(255,189,46,0.45);transition:all .15s ease">
+        <span class="light-icon" style="opacity:0;font-size:10px;font-weight:900;color:#613b00;line-height:1;transition:opacity .15s">−</span>
+      </button>
+      <button id="win-btn-max" title="Maximize / Toggle Fullscreen" aria-label="Maximize" style="width:13px;height:13px;border-radius:50%;background:#27c93f;border:1px solid #1aab29;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(39,201,63,0.45);transition:all .15s ease">
+        <span class="light-icon" style="opacity:0;font-size:8px;font-weight:900;color:#004d11;line-height:1;transition:opacity .15s">⤢</span>
+      </button>
+      <button id="win-btn-close" title="Close Studio" aria-label="Close" style="width:13px;height:13px;border-radius:50%;background:#ff5f56;border:1px solid #e0443e;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 6px rgba(255,95,86,0.45);transition:all .15s ease">
+        <span class="light-icon" style="opacity:0;font-size:8px;font-weight:900;color:#5a0000;line-height:1;transition:opacity .15s">✕</span>
+      </button>
     </div>
   </header>
 <div id="pj-explainer-body">
