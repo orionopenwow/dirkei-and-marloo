@@ -1,0 +1,237 @@
+{
+ "approved": true,
+ "t": {
+  "id": "terraria",
+  "label": "2D Sandbox Dig-and-Build",
+  "inspired": "Terraria (2011)",
+  "desc": "A 2D digging, crafting and building sandbox. A generated world, gear tiers gated by bosses, and townspeople who move into the houses you build.",
+  "status": "researched",
+  "sources": [
+   {
+    "title": "Terraria - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Terraria"
+   },
+   {
+    "title": "Guide:Game progression - Official Terraria Wiki",
+    "url": "https://terraria.wiki.gg/wiki/Game_progression"
+   },
+   {
+    "title": "House - Official Terraria Wiki",
+    "url": "https://terraria.wiki.gg/wiki/Housing"
+   }
+  ],
+  "forbidden": [
+   "Terraria",
+   "Re-Logic",
+   "Redigit",
+   "Eye of Cthulhu",
+   "Wall of Flesh",
+   "Moon Lord",
+   "Skeletron",
+   "Plantera",
+   "Eater of Worlds",
+   "Brain of Cthulhu",
+   "King Slime",
+   "Queen Bee",
+   "Hardmode",
+   "Corruption",
+   "Crimson",
+   "Hallow",
+   "Life Crystal",
+   "Shadow Orb",
+   "Voodoo Doll",
+   "Goblin Tinkerer",
+   "Angler",
+   "Truffle",
+   "Nurse",
+   "Cobalt",
+   "Mythril",
+   "Adamantite",
+   "Chlorophyte",
+   "Old One's Army",
+   "Blood Moon",
+   "Solar Eclipse",
+   "Magic Mirror",
+   "Scott Lloyd Shelly",
+   "Journey's End",
+   "Golem",
+   "Celestial Pillars",
+   "Lunatic Cultist",
+   "505 Games",
+   "Spinks"
+  ],
+  "needs": {
+   "dim": "2D"
+  },
+  "answers": {
+   "genre": "survival",
+   "sub": "base",
+   "dim": "2D",
+   "camera": "side",
+   "art": "pixel",
+   "tone": "whim",
+   "audience": "all",
+   "difficulty": "adjustable",
+   "scope": "3",
+   "content": "lots",
+   "session": "long",
+   "story": "none",
+   "msty": "elec",
+   "sfx": "styl",
+   "amb": "adapt",
+   "voice": "none",
+   "mp": "coop",
+   "perf": "low",
+   "money": "paid",
+   "controls": [
+    "kbm",
+    "gamepad"
+   ],
+   "devices": [
+    "pc",
+    "console"
+   ],
+   "world": "proc",
+   "fail": "softloss",
+   "prog": "gear",
+   "feel": "tight",
+   "nview": "none",
+   "ending": "boss",
+   "procedural": "world",
+   "save": "auto",
+   "ui": "classic",
+   "team": "duo",
+   "time": "part",
+   "langs": "few",
+   "mods": "data",
+   "online": "none",
+   "loop": "Dig and chop for materials, craft better tools and weapons, build a house, let a new townsperson move in, explore deeper for rarer ore, then summon and beat a boss whose win changes the world and unlocks the next tier of gear."
+  },
+  "pillars": [
+   "No set goal: the player chooses to dig, build, fight or explore, and there is no single required path.",
+   "Structured freedom: progression is a loop of explore, upgrade gear, beat a boss or event, then use what it gives you to reach the next area.",
+   "Everything is a block: the whole 2D world can be dug, placed and replaced, so terrain is both the map and the toolbox.",
+   "Depth means danger and reward: surface, caves, deep caverns and the underworld each have their own enemies and richer materials.",
+   "Houses attract townspeople: a valid room (closed walls, light, table, chair, door) makes a shopkeeper move in, so building has a gameplay payoff.",
+   "Bosses are gates and world events: beating key bosses unlocks new ores, enemies, characters and a big shift in the world's rules.",
+   "Gear defines the class: melee, ranged, magic or summoner is just what you equip, so players can change style at any time.",
+   "Learn by experimenting: new mechanics arrive gradually and the game gives little hand-holding."
+  ],
+  "philosophy": "Treat the world as a big 2D grid of tiles plus a grid of background walls, generated from a seed in passes (terrain, caves, ore, biomes, structures, chests). Tiles, items, recipes, enemies and bosses are data tables, not code. A single world-flags dictionary (boss beaten, event unlocked, characters met) drives what spawns and what can be crafted, so progression is just flags. Housing is a flood fill from a point: check closed frame, size limits and the furniture categories, and report exactly what is missing. Use a fixed timestep, chunked tile rendering and lighting that is recalculated only near changes. Keep systems small and talk through events. Build the dig, craft and first-boss loop before any extra biomes or characters.",
+  "avoid": [
+   "Do not copy any names, characters, places, bosses, items, art, music or text from the original game. Recreate the design principles only.",
+   "Do not force one linear quest chain: the sandbox freedom to ignore bosses and just build is the point.",
+   "Do not hide the housing rules: when a room is invalid, tell the player exactly which part is missing.",
+   "Do not make worlds a fixed hand-made map: every new world should be generated so the dig-and-explore loop stays fresh.",
+   "Do not gate the early game behind long tutorials: teach through a short helper character and experimenting.",
+   "Do not let boss gates feel arbitrary: each gate should clearly give a new material, area or character."
+  ],
+  "art": "Bright, readable pixel art in a 16-bit style with a chunky tile grid. Clear colour identity per biome (green surface, grey stone, glowing caves, red underworld) so depth reads at a glance. Parallax backgrounds and a day and night sky. Lighting is the key visual: torches and glowing materials push back the dark in caves. Enemies and bosses have strong silhouettes and funny, slightly cartoony designs.",
+  "music": "Upbeat chiptune-leaning and light rock tracks with a distinct theme per biome and time of day, and a short, more intense theme for each boss fight. Calm tune for the surface by day, tense and quieter at night and deep underground. Themes loop cleanly and switch with a short cross-fade when you change biome.",
+  "sound": "Crunchy, satisfying dig and chop sounds that vary by material (dirt, stone, wood, ore). Short, stylised weapon swings and hits. Distinct audio cues for pickups, crafting, and a character arriving in town. Enemy and boss roars are low and comic rather than realistic. Night and cave areas get ambient noises that warn of danger before you see it.",
+  "skip": [
+   "Needs Meters",
+   "Gathering Resources",
+   "Crafting",
+   "Building / Shelter"
+  ],
+  "steps": {
+   "Camera": "Use a side-on camera that follows the player with a small dead zone, a zoom option, and chunked tile drawing so only visible tiles are rendered.",
+   "Player Controller": "Add run, jump with variable height, a grappling hook, and a use-tool action aimed with the mouse. Digging has a short swing, a range limit and a tool tier.",
+   "First Playable Level": "Generate a small flat-ish test world from a seed with grass, dirt, stone and one ore, plus trees, so digging and building can be tested at once.",
+   "Sound Identity": "Plan layers: dig and build sounds, surface and cave ambience, one biome theme per zone, one boss theme.",
+   "Onboarding & Tutorial": "Add one helper character at spawn who answers what to do next with a short hint based on what you own. No forced pop-ups.",
+   "Difficulty Modes & Accessibility": "Offer world difficulty modes at world creation (a forgiving one, a normal one and a hard one with higher stakes on death) and a creative mode with free items."
+  },
+  "add": [
+   [
+    1,
+    0,
+    "Tile World & Digging",
+    "Everything can be dug and placed.",
+    "Store the world as a grid of tile ids plus a grid of wall ids. Add a mining action with a tool tier per tile, a block placement action, and drops when a tile breaks. Define tiles in one data table (hardness, tool needed, drop).",
+    "I can dig a tunnel, pick up the blocks and place them to build a wall."
+   ],
+   [
+    1,
+    0,
+    "Crafting Stations & Recipes",
+    "Wood becomes tools, ore becomes better tools.",
+    "Add a recipe table with ingredients, result and required station (hands, work bench, furnace, anvil). Show only recipes you can make nearby. Add 3 tool and weapon tiers made from different materials.",
+    "I can chop wood, build a bench, craft a pickaxe, and later smelt ore into a better one."
+   ],
+   [
+    1,
+    0,
+    "Layered Procedural World",
+    "Depth is the map.",
+    "Generate a world from a seed in passes: surface terrain, caves, ore veins by depth, one or two biomes, chests with starter loot, and a deep hostile layer. Offer small, medium and large world sizes.",
+    "A new seed gives a different world with ore getting rarer and enemies getting harder as I go deeper."
+   ],
+   [
+    1,
+    1,
+    "Max Health Upgrades & Night Enemies",
+    "Night is a threat.",
+    "Add day and night. Weak enemies appear on the surface at night and stronger ones underground. Hidden pickups in caves raise max health.",
+    "Night brings enemies, I can survive with a shelter, and finding an upgrade raises my max health."
+   ],
+   [
+    2,
+    1,
+    "Housing & Townspeople",
+    "A room is a home.",
+    "Write a room check by flood fill: closed frame, minimum and maximum size, a light, a table, a chair and a door. When a valid empty room exists and a condition is met, a shopkeeper arrives and moves in. Show which part is missing when invalid.",
+    "I build a room, a character walks in, and breaking the wall makes them move out."
+   ],
+   [
+    2,
+    1,
+    "Boss Summon & World Gates",
+    "Beat it to open the next tier.",
+    "Add a boss summoned by a crafted item or a condition, with phases and a health bar. Winning sets a world flag that unlocks a new ore layer, new enemies and new items for sale. Place several bosses in order of gear tier.",
+    "Beating the boss changes what spawns and what I can craft."
+   ],
+   [
+    2,
+    2,
+    "World Event Waves",
+    "Invasions test your base.",
+    "Add timed invasion events that spawn waves of enemies at the edge of the screen with a progress bar. Winning grants a unique drop or unlocks a new townsperson.",
+    "An invasion arrives, I defend my base, and I get a reward for finishing it."
+   ],
+   [
+    3,
+    1,
+    "Gear Classes & Accessories",
+    "Equipment is your class.",
+    "Add armour sets, accessories and weapon types (melee, ranged, magic, summons). Give each a clear role and let players swap freely. Add accessories such as double jump or faster movement.",
+    "Switching gear changes how I fight with no class lock."
+   ],
+   [
+    3,
+    2,
+    "Co-op Multiplayer",
+    "Build together.",
+    "Add host and join for 2 to 4 players sharing one world. Sync tile changes, enemies and boss state from the host. Keep inventories per player.",
+    "A friend joins my world, and we dig and fight a boss together."
+   ],
+   [
+    4,
+    2,
+    "Mod Data Tables",
+    "Content as data.",
+    "Load tiles, items, recipes and enemies from data files so players can add content without touching code. Validate files and show clear errors.",
+    "I can drop in a data file and see a new item in the game."
+   ]
+  ],
+  "differ": [
+   "Change the setting: dig through an asteroid, a sunken ruin or the inside of a giant machine instead of soil.",
+   "Make building the focus: no combat, and townspeople are the goal.",
+   "Replace the vertical dig with a horizontal tunnel network in a space station.",
+   "Give housing a twist, such as townspeople who need specific furniture or neighbours to stay."
+  ],
+  "status_note": "",
+  "notes": "Based on the Wikipedia article and two community wiki pages (progression and housing), all opened and indexed. Exact summon items, numbers and boss order are not guaranteed. The housing rules are simplified. Events, fishing, mounts and the many late-game tiers are only sketched, and the original's wide post-launch content is out of scope for a first version."
+ }
+}

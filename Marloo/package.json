@@ -1,0 +1,19 @@
+{
+  "name": "queens-domain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Queen's Domain Architecture Engine - Autonomous Vibe-Coding Platform & Game Blueprint Synthesizer",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node tests/run.js",
+    "autopilot": "node scripts/autopilot.js",
+    "release": "node scripts/build-release.js",
+    "build:exe": "node scripts/build-exe.js",
+    "dev-wizard": "node scripts/dev-console-wizard.js",
+    "dev-wizard:auto": "node scripts/dev-console-wizard.js --auto --repo=queens-domain",
+    "dev-wizard:names": "node scripts/dev-console-wizard.js --names",
+    "audit:security": "node scripts/dev-console-wizard.js --audit",
+    "install-shortcut": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1"
+  },
+  "engines": { "node": ">=18.15" }
+}

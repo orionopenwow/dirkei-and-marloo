@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-11-05T07:59:46.079Z",
+  "summary": {
+    "totalFilesDirkei": 97,
+    "totalFilesMarloo": 97,
+    "modifiedCount": 0,
+    "onlyInDirkeiCount": 0,
+    "onlyInMarlooCount": 0,
+    "identicalCount": 97
+  },
+  "git": {
+    "latestCommit": "",
+    "dirkeiCommits": [],
+    "marlooCommits": []
+  },
+  "differences": {
+    "modifiedFiles": [],
+    "onlyInDirkei": [],
+    "onlyInMarloo": []
+  },
+  "features": {
+    "dirkei": [
+      {
+        "id": "prompt-gen",
+        "name": "AI Game Prompt Generator",
+        "tag": "Core"
+      },
+      {
+        "id": "drop-detect",
+        "name": "Drag & Drop Inspiration Detection (.glb/images/audio)",
+        "tag": "Inspiration"
+      },
+      {
+        "id": "forest-theme",
+        "name": "Atmospheric Forest Backdrop & Glassmorphism",
+        "tag": "Visuals"
+      },
+      {
+        "id": "sparks",
+        "name": "Instant Inspiration Spark Pills",
+        "tag": "UX"
+      },
+      {
+        "id": "created-projects",
+        "name": "Created Projects Gallery with 1-Click Copy & Work",
+        "tag": "Projects"
+      },
+      {
+        "id": "spawn-bridge",
+        "name": "Spawn.co Savi WebGL Bridge",
+        "tag": "Engine"
+      },
+      {
+        "id": "cc0-assets",
+        "name": "Curated CC0 Modular Asset Synthesizer",
+        "tag": "Assets"
+      },
+      {
+        "id": "ponytail",
+        "name": "Ponytail Zero-GC 60Hz Deterministic Loop",
+        "tag": "Architecture"
+      }
+    ],
+    "marloo": [
+      {
+        "id": "prompt-gen",
+        "name": "AI Game Prompt Generator",
+        "tag": "Core"
+      },
+      {
+        "id": "drop-detect",
+        "name": "Drag & Drop Inspiration Detection (.glb/images/audio)",
+        "tag": "Inspiration"
+      },
+      {
+        "id": "forest-theme",
+        "name": "Atmospheric Forest Backdrop & Glassmorphism",
+        "tag": "Visuals"
+      },
+      {
+        "id": "sparks",
+        "name": "Instant Inspiration Spark Pills",
+        "tag": "UX"
+      },
+      {
+        "id": "created-projects",
+        "name": "Created Projects Gallery with 1-Click Copy & Work",
+        "tag": "Projects"
+      },
+      {
+        "id": "spawn-bridge",
+        "name": "Spawn.co Savi WebGL Bridge",
+        "tag": "Engine"
+      },
+      {
+        "id": "cc0-assets",
+        "name": "Curated CC0 Modular Asset Synthesizer",
+        "tag": "Assets"
+      },
+      {
+        "id": "ponytail",
+        "name": "Ponytail Zero-GC 60Hz Deterministic Loop",
+        "tag": "Architecture"
+      }
+    ]
+  },
+  "suggestions": {
+    "forDirkei": [],
+    "forMarloo": []
+  }
+}

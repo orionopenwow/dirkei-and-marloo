@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dirkei &amp; Marloo // Collaborative Studio Matrix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="Dirkei/icon.png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #04070a url('Dirkei/forest_bg.svg') center/cover no-repeat fixed;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 10, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 0;
+    }
+    .main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .glass-card {
+      background: rgba(10, 14, 22, 0.72);
+      backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .option-card {
+      background: rgba(8, 12, 18, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      transition: all .2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+    }
+    .option-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0, 240, 255, 0.15);
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 14px;
+    }
+    .btn-cyan { background: rgba(0,240,255,0.15); border: 1px solid rgba(0,240,255,0.4); color: #00f0ff; }
+    .btn-gold { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.4); color: #fbbf24; }
+    .btn-purple { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.4); color: #c084fc; }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="glass-card">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:4px 16px;background:rgba(0,240,255,0.08);border:1px solid rgba(0,240,255,0.3);border-radius:20px;font-size:11.5px;font-weight:700;color:#00f0ff;margin-bottom:12px">
+        <span>✦</span> COLLABORATIVE FORK MATRIX
+      </div>
+      <h1 style="font-size:32px;font-weight:800;color:#fff;margin:0 0 10px;letter-spacing:-.02em">DIRKEI &amp; MARLOO</h1>
+      <p style="font-size:14px;color:#94a3b8;max-width:680px;margin:0 auto 24px;line-height:1.5">
+        Dual-fork architecture laboratory with enforced push isolation. Launch the Developer Console to consolidate version differences, compare feature checklists, and review automated pull suggestions.
+      </p>
+
+      <div class="grid">
+        <!-- Console -->
+        <a href="console/" class="option-card" style="border-color:rgba(0,240,255,0.25)">
+          <div>
+            <div style="font-size:24px;margin-bottom:8px">⚡</div>
+            <b style="font-size:16px;color:#fff">Developer Console</b>
+            <div style="font-size:12px;color:#94a3b8;margin-top:6px">Consolidates version differences, feature checklists, and suggested cross-pollinations between Dirkei &amp; Marloo.</div>
+          </div>
+          <span class="btn btn-cyan">Open Dev Console ➔</span>
+        </a>
+
+        <!-- Dirkei Fork -->
+        <a href="Dirkei/" class="option-card" style="border-color:rgba(251,191,36,0.25)">
+          <div>
+            <div style="font-size:24px;margin-bottom:8px">⚔️</div>
+            <b style="font-size:16px;color:#fff">Dirkei's Fork</b>
+            <div style="font-size:12px;color:#94a3b8;margin-top:6px">Dirkei's independent version of the Queen's Domain studio. Enforced to push only within <code>/Dirkei</code>.</div>
+          </div>
+          <span class="btn btn-gold">Launch Dirkei Studio ➔</span>
+        </a>
+
+        <!-- Marloo Fork -->
+        <a href="Marloo/" class="option-card" style="border-color:rgba(168,85,247,0.25)">
+          <div>
+            <div style="font-size:24px;margin-bottom:8px">🔮</div>
+            <b style="font-size:16px;color:#fff">Marloo's Fork</b>
+            <div style="font-size:12px;color:#94a3b8;margin-top:6px">Marloo's independent version of the Queen's Domain studio. Enforced to push only within <code>/Marloo</code>.</div>
+          </div>
+          <span class="btn btn-purple">Launch Marloo Studio ➔</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-cozy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14211a"/>
+      <stop offset="100%" stop-color="#0a120e"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#1b4332"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e76f51"/>
+      <stop offset="100%" stop-color="#d05336"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="160" fill="url(#bg-cozy)"/>
+  <!-- Gentle Rolling Hills -->
+  <path d="M-20 160 Q60 90 160 120 T360 100 T440 160 Z" fill="url(#grass)"/>
+  <path d="M40 160 Q180 110 280 130 T440 115 T480 160 Z" fill="#1b4332" opacity="0.6"/>
+  <!-- River stream -->
+  <path d="M120 160 Q170 140 210 160 Z" fill="#4ea8de" opacity="0.4"/>
+  <!-- Cozy Cottage (Isometric / 2.5D) -->
+  <g transform="translate(190, 75)">
+    <!-- House Base -->
+    <polygon points="-30,30 10,48 45,30 5,12" fill="#d8c5a2" stroke="#8c7757" stroke-width="1"/>
+    <polygon points="-30,30 10,48 10,68 -30,50" fill="#baa580" stroke="#756244" stroke-width="1"/>
+    <polygon points="10,48 45,30 45,50 10,68" fill="#d8c5a2" stroke="#8c7757" stroke-width="1"/>
+    <!-- Door -->
+    <polygon points="-12,48 -2,53 -2,65 -12,60" fill="#5c4033"/>
+    <!-- Windows -->
+    <polygon points="20,44 32,38 32,46 20,52" fill="#ffd166"/>
+    <!-- Roof -->
+    <polygon points="-36,28 10,-2 10,14 -36,44" fill="url(#roof)"/>
+    <polygon points="10,-2 52,24 52,40 10,14" fill="#bc4749"/>
+    <!-- Chimney & Smoke -->
+    <rect x="-18" y="2" width="6" height="14" fill="#8c7757"/>
+    <circle cx="-15" cy="-4" r="3" fill="#fff" opacity="0.4"/>
+    <circle cx="-12" cy="-12" r="4.5" fill="#fff" opacity="0.25"/>
+    <circle cx="-9" cy="-22" r="6" fill="#fff" opacity="0.12"/>
+  </g>
+  <!-- Crops / Wheat Spreads -->
+  <g transform="translate(90, 125)">
+    <line x1="0" y1="15" x2="-2" y2="0" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="6" y1="16" x2="4" y2="2" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="12" y1="15" x2="14" y2="1" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="18" y1="17" x2="20" y2="3" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="24" y1="16" x2="23" y2="1" stroke="#e9c46a" stroke-width="2"/>
+  </g>
+  <g transform="translate(280, 120)">
+    <line x1="0" y1="15" x2="-2" y2="0" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="6" y1="16" x2="4" y2="2" stroke="#e9c46a" stroke-width="2"/>
+    <line x1="12" y1="15" x2="14" y2="1" stroke="#e9c46a" stroke-width="2"/>
+  </g>
+  <!-- Badges -->
+  <rect x="14" y="14" width="140" height="24" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="26" y="30" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#52b788">🌾 HARVEST VALLEY</text>
+  <rect x="310" y="14" width="76" height="24" rx="12" fill="rgba(82,183,136,0.15)" stroke="rgba(82,183,136,0.4)" stroke-width="1"/>
+  <text x="323" y="30" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#52b788">24 STEPS</text>
+</svg>

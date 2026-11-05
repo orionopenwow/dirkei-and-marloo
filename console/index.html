@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dirkei &amp; Marloo // Developer Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../Dirkei/icon.png">
+  <style>
+    :root {
+      --bg: #04070a;
+      --card-bg: rgba(10, 14, 22, 0.72);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --dim: #94a3b8;
+      --cyan: #00f0ff;
+      --gold: #fbbf24;
+      --green: #10b981;
+      --purple: #a855f7;
+      --red: #f43f5e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg) url('../Dirkei/forest_bg.svg') center/cover no-repeat fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 10, 0.55);
+      backdrop-filter: blur(2px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1);
+      margin-bottom: 20px;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+    .badge-cyan { background: rgba(0,240,255,0.12); border: 1px solid rgba(0,240,255,0.35); color: var(--cyan); }
+    .badge-gold { background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.35); color: var(--gold); }
+    .badge-green { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35); color: var(--green); }
+    .badge-purple { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.35); color: var(--purple); }
+    .btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all .15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+    .btn-cyan { background: rgba(0,240,255,0.15); border-color: rgba(0,240,255,0.4); color: #fff; }
+    .btn-cyan:hover { background: rgba(0,240,255,0.25); box-shadow: 0 0 16px rgba(0,240,255,0.3); }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat-card {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .stat-card small { color: var(--dim); font-size: 11px; text-transform: uppercase; font-weight: 700; }
+    .stat-card b { display: block; font-size: 22px; color: #fff; margin-top: 4px; }
+    .dual-pane {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .dual-pane { grid-template-columns: 1fr; } }
+    .col-card {
+      background: rgba(8,12,18,0.65);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .file-diff-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      font-family: Consolas, monospace;
+    }
+    .suggestion-box {
+      background: rgba(251,191,36,0.05);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Top Nav & Header -->
+    <div class="glass-card">
+      <div class="header-bar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="../Dirkei/icon.png" style="width:34px;height:34px;border-radius:6px;border:1px solid rgba(0,240,255,0.5);box-shadow:0 0 12px rgba(0,240,255,0.3)">
+          <div>
+            <b style="font-size:18px;color:#fff;letter-spacing:.02em">DIRKEI &amp; MARLOO // DEVELOPER CONSOLE</b>
+            <div style="font-size:11.5px;color:var(--dim)">Collaborative Multi-Fork Architecture Matrix &amp; Live Difference Consolidator</div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="badge badge-green" id="sync-status-badge">● PULL CHECKS ACTIVE</span>
+          <button class="btn btn-cyan" id="btn-pull-check">⚡ Run Pull Check &amp; Consolidate</button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Summary -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <small>Dirkei's Files</small>
+          <b id="stat-dirkei-files">-</b>
+        </div>
+        <div class="stat-card">
+          <small>Marloo's Files</small>
+          <b id="stat-marloo-files">-</b>
+        </div>
+        <div class="stat-card">
+          <small>Modified / Diverged</small>
+          <b id="stat-modified" style="color:var(--gold)">-</b>
+        </div>
+        <div class="stat-card">
+          <small>Cross-Pollination Suggestions</small>
+          <b id="stat-suggestions" style="color:var(--cyan)">-</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dual Pane: Dirkei Fork vs Marloo Fork -->
+    <div class="dual-pane">
+      
+      <!-- Left Column: Dirkei Version -->
+      <div class="col-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="badge badge-cyan">DIRKEI FORK</span>
+            <b style="color:#fff">Folder: /Dirkei</b>
+          </div>
+          <span class="badge badge-green">Push Access: DIRKEI ONLY</span>
+        </div>
+
+        <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Dirkei's branch &amp; fork. Push isolation active: Dirkei is restricted strictly to committing within this folder.</p>
+        
+        <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:8px">Detected Features in Dirkei:</div>
+        <div id="dirkei-features-list" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px"></div>
+
+        <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px">Suggested Features for Dirkei (from Marloo):</div>
+        <div id="dirkei-suggestions-list" style="margin-bottom:16px"></div>
+
+        <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:8px">Recent Commits touching /Dirkei:</div>
+        <div id="dirkei-commits-list" style="font-family:monospace;font-size:11px;color:var(--dim)"></div>
+      </div>
+
+      <!-- Right Column: Marloo Version -->
+      <div class="col-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="badge badge-purple">MARLOO FORK</span>
+            <b style="color:#fff">Folder: /Marloo</b>
+          </div>
+          <span class="badge badge-green">Push Access: MARLOO ONLY</span>
+        </div>
+
+        <p style="font-size:12px;color:var(--dim);margin-bottom:14px">Marloo's branch &amp; fork. Push isolation active: Marloo is restricted strictly to committing within this folder.</p>
+        
+        <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:8px">Detected Features in Marloo:</div>
+        <div id="marloo-features-list" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px"></div>
+
+        <div style="font-size:12px;font-weight:700;color:var(--cyan);margin-bottom:8px">Suggested Features for Marloo (from Dirkei):</div>
+        <div id="marloo-suggestions-list" style="margin-bottom:16px"></div>
+
+        <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:8px">Recent Commits touching /Marloo:</div>
+        <div id="marloo-commits-list" style="font-family:monospace;font-size:11px;color:var(--dim)"></div>
+      </div>
+
+    </div>
+
+    <!-- Version Differences Inspector -->
+    <div class="glass-card" style="margin-top:20px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <b style="font-size:14px;color:#fff">Consolidated Version Differences &amp; File Divergence</b>
+        <span class="badge badge-cyan" id="diff-count-badge">0 Differences</span>
+      </div>
+
+      <div id="diff-list" style="max-height:300px;overflow-y:auto;padding-right:4px">
+        <div style="text-align:center;color:var(--dim);padding:20px">Loading difference consolidation...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    async function loadDiffData() {
+      try {
+        const res = await fetch('diff-data.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Could not load diff-data.json');
+        const data = await res.json();
+        renderConsole(data);
+      } catch (err) {
+        document.getElementById('diff-list').innerHTML = '<div style="color:var(--gold);padding:14px">Run <code>node scripts/diff-versions.js</code> to generate initial report.</div>';
+      }
+    }
+
+    function renderConsole(data) {
+      document.getElementById('stat-dirkei-files').textContent = data.summary.totalFilesDirkei;
+      document.getElementById('stat-marloo-files').textContent = data.summary.totalFilesMarloo;
+      document.getElementById('stat-modified').textContent = data.summary.modifiedCount;
+      
+      const totalSugg = data.suggestions.forDirkei.length + data.suggestions.forMarloo.length;
+      document.getElementById('stat-suggestions').textContent = totalSugg;
+
+      // Features in Dirkei
+      const dFeatEl = document.getElementById('dirkei-features-list');
+      dFeatEl.innerHTML = '';
+      data.features.dirkei.forEach(f => {
+        dFeatEl.innerHTML += `<span class="badge badge-cyan">✓ ${f.name}</span>`;
+      });
+
+      // Features in Marloo
+      const mFeatEl = document.getElementById('marloo-features-list');
+      mFeatEl.innerHTML = '';
+      data.features.marloo.forEach(f => {
+        mFeatEl.innerHTML += `<span class="badge badge-purple">✓ ${f.name}</span>`;
+      });
+
+      // Suggestions for Dirkei
+      const dSuggEl = document.getElementById('dirkei-suggestions-list');
+      dSuggEl.innerHTML = data.suggestions.forDirkei.length ? '' : '<div style="font-size:11.5px;color:var(--dim)">All Marloo features synced!</div>';
+      data.suggestions.forDirkei.forEach(s => {
+        dSuggEl.innerHTML += `
+          <div class="suggestion-box">
+            <span style="font-size:14px">💡</span>
+            <div>
+              <b style="color:var(--gold);font-size:12px">${s.feature}</b>
+              <div style="font-size:11px;color:var(--dim)">${s.rationale}</div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Suggestions for Marloo
+      const mSuggEl = document.getElementById('marloo-suggestions-list');
+      mSuggEl.innerHTML = data.suggestions.forMarloo.length ? '' : '<div style="font-size:11.5px;color:var(--dim)">All Dirkei features synced!</div>';
+      data.suggestions.forMarloo.forEach(s => {
+        mSuggEl.innerHTML += `
+          <div class="suggestion-box">
+            <span style="font-size:14px">💡</span>
+            <div>
+              <b style="color:var(--cyan);font-size:12px">${s.feature}</b>
+              <div style="font-size:11px;color:var(--dim)">${s.rationale}</div>
+            </div>
+          </div>
+        `;
+      });
+
+      // Commits
+      document.getElementById('dirkei-commits-list').innerHTML = data.git.dirkeiCommits.map(c => `<div>${c}</div>`).join('') || '<div>No recent commits</div>';
+      document.getElementById('marloo-commits-list').innerHTML = data.git.marlooCommits.map(c => `<div>${c}</div>`).join('') || '<div>No recent commits</div>';
+
+      // Diff list
+      const diffEl = document.getElementById('diff-list');
+      diffEl.innerHTML = '';
+      document.getElementById('diff-count-badge').textContent = data.differences.modifiedFiles.length + ' Differences';
+      
+      if (data.differences.modifiedFiles.length === 0) {
+        diffEl.innerHTML = '<div style="color:var(--green);padding:14px;text-align:center">✓ Versions are in 100% sync! No file differences.</div>';
+      } else {
+        data.differences.modifiedFiles.forEach(d => {
+          diffEl.innerHTML += `
+            <div class="file-diff-item">
+              <span>📄 <b>${d.file}</b></span>
+              <span style="color:var(--gold)">Dirkei: ${d.dirkeiSize}B | Marloo: ${d.marlooSize}B (${d.diffSize > 0 ? '+' : ''}${d.diffSize}B)</span>
+            </div>
+          `;
+        });
+      }
+    }
+
+    document.getElementById('btn-pull-check').onclick = async () => {
+      document.getElementById('sync-status-badge').textContent = 'PULLING & CHECKING...';
+      try {
+        await fetch('/api/check', { method: 'POST' });
+      } catch(e) {}
+      await loadDiffData();
+      document.getElementById('sync-status-badge').textContent = '● PULL CHECKS ACTIVE';
+    };
+
+    loadDiffData();
+  </script>
+</body>
+</html>

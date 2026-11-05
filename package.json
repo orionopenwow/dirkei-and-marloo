@@ -1,0 +1,20 @@
+{
+  "name": "dirkei-and-marloo",
+  "version": "1.0.0",
+  "description": "Dirkei & Marloo Collaborative Fork Matrix with Automated Developer Console and Push Isolation",
+  "main": "console/server.js",
+  "scripts": {
+    "start": "node console/server.js",
+    "diff": "node scripts/diff-versions.js",
+    "guard:dirkei": "node scripts/push-guard.js Dirkei",
+    "guard:marloo": "node scripts/push-guard.js Marloo"
+  },
+  "keywords": [
+    "game-architecture",
+    "ai-agent",
+    "developer-console",
+    "diff-consolidator"
+  ],
+  "author": "Orion Open Source",
+  "license": "MIT"
+}

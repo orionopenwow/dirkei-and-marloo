@@ -1,0 +1,227 @@
+{
+ "approved": true,
+ "t": {
+  "id": "stardew",
+  "label": "Cosy Farm Life (Stardew Valley style)",
+  "inspired": "Stardew Valley (2016)",
+  "desc": "A relaxed farm-life sim. Short days with an energy budget, seasonal crops, town friendships, a restoration goal, and no fail state.",
+  "status": "researched",
+  "sources": [
+   {
+    "title": "Stardew Valley - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Stardew_Valley"
+   },
+   {
+    "title": "MDA: Stardew Valley - Mechanics of Magic",
+    "url": "https://mechanicsofmagic.com/2024/04/09/mda-stardew-valley-2/"
+   },
+   {
+    "title": "Eric Barone says the Community Center versus JojaMart battle was too black and white - GamesRadar",
+    "url": "https://www.gamesradar.com/games/simulation/if-i-made-stardew-valley-again-i-would-try-to-be-a-little-more-nuanced-eric-barone-says-the-community-center-versus-jojamart-battle-was-too-black-and-white"
+   }
+  ],
+  "forbidden": [
+   "Pelican Town",
+   "Eric Barone",
+   "ConcernedApe",
+   "Chucklefish",
+   "JojaMart",
+   "Joja",
+   "Community Center",
+   "Harvest Moon",
+   "Sprout Valley",
+   "Stardrop",
+   "Junimo",
+   "Gunther",
+   "Krobus",
+   "Ginger Island",
+   "Cindersap",
+   "Calico Desert",
+   "Skull Cavern",
+   "Pierre",
+   "Marnie",
+   "Willy",
+   "Robin",
+   "Linus",
+   "Gus",
+   "Clint",
+   "Sebastian",
+   "Abigail",
+   "Haley",
+   "Emily",
+   "Harvey",
+   "Leah",
+   "Penny",
+   "Shane",
+   "Elliott",
+   "Maru"
+  ],
+  "needs": {
+   "dim": "2D"
+  },
+  "answers": {
+   "genre": "cozy",
+   "sub": "farming",
+   "dim": "2D",
+   "camera": "top",
+   "art": "pixel",
+   "tone": "cosy",
+   "audience": "all",
+   "difficulty": "forgiving",
+   "scope": "2",
+   "content": "lots",
+   "session": "30",
+   "story": "light",
+   "msty": "chip",
+   "sfx": "soft",
+   "amb": "nature",
+   "voice": "blips",
+   "mp": "none",
+   "perf": "low",
+   "money": "paid",
+   "controls": [
+    "kbm",
+    "gamepad"
+   ],
+   "devices": [
+    "pc"
+   ],
+   "world": "hub",
+   "fail": "softloss",
+   "prog": "unlocks",
+   "feel": "tight",
+   "nview": "none",
+   "ending": "endless",
+   "procedural": "none",
+   "save": "auto",
+   "ui": "classic",
+   "team": "solo",
+   "time": "part",
+   "loop": "Wake up on the farm, spend a limited energy budget watering and harvesting crops, tending animals, mining, fishing or visiting townsfolk, sell goods, and sleep to save. Money buys tools and seeds, gifts build friendships, and handing in bundles of collected goods restores the town hall and opens new areas as the seasons turn."
+  },
+  "pillars": [
+   "Short days, clear budget: each day has a clock and an energy bar that tools drain. The player plans the day and then sleeps, which gives a natural stopping point and a 'one more day' pull.",
+   "Many small loops feeding each other: farming, foraging, fishing, mining and socialising all earn money or goods that improve the others, so there is always a next useful thing to do.",
+   "Seasons as pacing: a calendar of four 28-day seasons changes which crops, fish and events are available, so the first year keeps revealing new content.",
+   "A gentle long-term goal: a collection of bundles to hand in gives direction without a deadline, and finishing them unlocks new places and activities.",
+   "Relationships over time: villagers have routines, likes and dislikes. Daily chats and gifts slowly build friendship, and one can become a spouse who helps with farm chores.",
+   "Failure is soft: running out of time or energy costs some money or a lost day, never progress. Crops die if neglected, but nothing punishes the player harshly.",
+   "Expression and freedom: the player decides how to lay out the farm, what to specialise in and who to befriend, with no required order."
+  ],
+  "philosophy": "Treat the game as a calendar plus a pile of small data tables. One clock drives everything: time of day, day of season, season, year. Every crop, fish, animal product, villager schedule, gift preference and event is a row of data keyed by season, weather and date, so adding content means adding rows, not code. Energy is a single resource spent by tool actions, refilled by sleeping or eating. Save once at day end, so state is small: inventory, farm tile grid, relationship numbers, calendar flags. Build the daily loop first with one crop and one sell box, and prove that a day feels good before adding any second system. Keep each system shallow but let them feed one another. Tune for calm: no timers that punish, only budgets that make choices.",
+  "avoid": [
+   "Do not copy any names, characters, places, lore, art, music or text from the original game. Recreate the design principles only.",
+   "No harsh punishment: losing a day or some money is the worst outcome. Never delete crops, relationships or progress for a mistake.",
+   "No endless to-do pressure: do not stack so many daily chores that the day feels like a job. Offer choices, not obligations.",
+   "No hidden, unreadable rules: show the season, weather, time and energy at all times, and tell the player which crops grow in which season.",
+   "Do not add a second goal system that competes with the first. One clear long-term goal with optional side paths is enough.",
+   "Do not lock the main goal behind a single missed season: make sure every bundle item can be found again within a reasonable time.",
+   "Do not make villagers mere vending machines: give each one a routine, a place to be and a few lines that change over time."
+  ],
+  "art": "Bright, colourful top-down pixel art with a readable tile grid. Each season has its own palette: fresh greens in spring, warm yellows in summer, oranges in autumn, pale blues in winter. Crops show clear growth stages so a glance tells you what needs work. Soft lighting shifts from morning to evening and a darker tint at night. Small, friendly character sprites with a few expressive portraits for conversations.",
+  "music": "Gentle, melodic chiptune-style tracks that change with the season and weather, with a calm tune for each area and a lively one for festivals. Music fades to quiet ambience at times so it never wears out. Mining areas get a moodier, more tense track. Simple melodies built from a few instruments are enough.",
+  "sound": "Soft, tactile sounds for every small action: hoe, watering can, pick, splash of a fishing cast. Each tool and surface has its own cue so work feels satisfying. Villagers speak with short blip sounds rather than voices. Birdsong by day, crickets at night, rain and wind by weather. A clear, pleasant chime for finishing a bundle, levelling a skill or ending the day.",
+  "skip": [
+   "More Levels",
+   "Gentle Core Activity",
+   "Farming Loop & Seasons"
+  ],
+  "steps": {
+   "Camera": "Use a fixed top-down view that follows the player and stops at map edges. Keep the tile size constant so crops and objects read clearly.",
+   "Player Controller": "Movement is grid-friendly and quick with no stamina limit on walking. The player faces a direction and a tool button acts on the tile in front, with a highlight showing the target tile.",
+   "Onboarding & Tutorial": "Teach with the first days: a small plot, a starter set of seeds and a few gentle prompts from one friendly neighbour. Nothing should block free play.",
+   "Sound Identity": "Plan layers: a seasonal music set, tool and action sounds, and weather and time-of-day ambience. Make tool sounds the most satisfying part first.",
+   "Save & Load": "Save automatically when the player sleeps. The save holds the calendar, inventory, farm tiles, relationship numbers and world flags."
+  },
+  "add": [
+   [
+    1,
+    0,
+    "The Day Clock & Energy Bar",
+    "A day is a budget.",
+    "Build a clock that advances time of day at a fixed real-time speed, and a calendar of four 28-day seasons. Add an energy bar that tool actions drain and that refills fully on waking. At late night, force sleep with a small penalty such as less energy next morning. Put the day length and energy costs in one data table.",
+    "I can play a full day, run low on energy and get sent to bed, and the next day starts fresh."
+   ],
+   [
+    1,
+    0,
+    "Till, Plant, Water, Harvest",
+    "The core loop in a single plot.",
+    "Add tiles that can be tilled, planted, watered and harvested. A crop moves through growth stages, one per watered day, and needs the right season. Put crop data (seed, days per stage, season, sell price) in a table. Add a shipping box that pays out overnight.",
+    "I can grow a crop from seed to harvest, sell it, and see the money next morning."
+   ],
+   [
+    1,
+    0,
+    "Seasons, Weather & Crop Rules",
+    "The calendar changes the game.",
+    "Add season change that swaps the palette, available crops and forageable items. Add weather per day (sun, rain, storm, snow) that waters crops automatically when it rains. Crops of the wrong season wither at the change. Show the date, season and weather in the HUD.",
+    "When the season changes, the look, crops and available items change, and rain waters my plants."
+   ],
+   [
+    1,
+    1,
+    "Tools, Upgrades & Inventory",
+    "Better tools, faster days.",
+    "Give the player an axe, hoe, watering can, pickaxe and fishing rod, plus a small backpack. Let money buy tool upgrades that cost less energy per action or affect more tiles. Items stack in slots and the pack can be expanded.",
+    "Upgrading a tool makes the same action cheaper or bigger, and I can carry and sell my items."
+   ],
+   [
+    1,
+    1,
+    "Town, Shops & Villager Routines",
+    "A place worth visiting.",
+    "Build a town map with a general store, a tool shop and a few homes. Give 6 to 8 villagers a daily schedule table by time, day and weather. Add a daily talk and a gift action. Each villager has loved, liked, neutral and disliked items that change how much friendship a gift gives.",
+    "I can walk to town, find villagers where their schedule puts them, and see friendship rise after a gift."
+   ],
+   [
+    2,
+    1,
+    "Foraging, Fishing & Mining",
+    "More ways to fill a day.",
+    "Add forageables that spawn by season, a fishing mini-game based on timing, and a cave with layered floors, ore and a few simple monsters that can be dodged or hit with a basic weapon. Add skill levels that grow with use and unlock recipes or small bonuses.",
+    "I can spend a whole day on any of the three activities and come home with goods to sell."
+   ],
+   [
+    2,
+    1,
+    "Restoration Bundles",
+    "A goal that takes years, not hours.",
+    "Create a set of bundles, each asking for a group of goods such as crops, fish or foraged items by season. Handing them in fills a progress list and unlocks a new area or ability. No time limit, and every item must be obtainable again in a later season or year so no one gets stuck.",
+    "I can collect goods across seasons, hand in a bundle and see a new place open."
+   ],
+   [
+    2,
+    1,
+    "Animals & Farm Buildings",
+    "A farm that lives.",
+    "Add a coop and barn that hold animals. Animals need feeding daily, grow fond of the player over time and produce eggs or milk. Use money to build and expand buildings. Animals are named pets and producers.",
+    "I can buy an animal, feed it each day and collect its product."
+   ],
+   [
+    3,
+    1,
+    "Friendship Events & Marriage",
+    "Slow-burn relationships.",
+    "Add heart levels per villager with short scenes at set thresholds. A late stage lets one villager move in as a spouse who does a few chores on the farm, such as watering or feeding. Keep it optional and let every player choose their partner.",
+    "I can reach a high friendship level, see a short scene and have a spouse who helps on the farm."
+   ],
+   [
+    3,
+    2,
+    "Festivals & Calendar Events",
+    "Special days give rhythm.",
+    "Add one event per season on a fixed date, such as a fair or a night market. The town is closed or changed that day and there is a small activity with a prize. Show upcoming events on a calendar in the HUD.",
+    "On an event day the town changes and I can take part in a small activity."
+   ]
+  ],
+  "differ": [
+   "Move the setting to a coastal village where fishing and boats matter more than crops.",
+   "Swap the farm for a space-station garden with air and power as the daily budget.",
+   "Make it two-player co-op on a shared farm.",
+   "Replace the town-hall bundles with a museum that the player fills with finds."
+  ],
+  "status_note": "",
+  "notes": "Three pages were fetched and indexed (Wikipedia, a mechanics analysis, a news interview), plus three searches whose summaries added fan-site and blog views. I did not read the fetched pages in full, so details lean on search summaries. Exact day length, energy numbers and prices are not verified and are left for tuning. Multiplayer, mods and post-launch content are left out."
+ }
+}

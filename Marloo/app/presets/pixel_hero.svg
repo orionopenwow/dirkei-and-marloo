@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" shape-rendering="crispEdges">
+  <defs>
+    <radialGradient id="px-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background Grid & Pedestal -->
+  <rect width="400" height="400" fill="#0c0c12"/>
+  <circle cx="200" cy="220" r="160" fill="url(#px-glow)"/>
+  
+  <!-- Ambient Isometric Tile Ground -->
+  <g opacity="0.3">
+    <path d="M40 320 L200 370 L360 320 L200 270 Z" fill="#181824" stroke="#2a2a3c" stroke-width="2"/>
+    <path d="M80 320 L200 360 L320 320 L200 280 Z" fill="#202030"/>
+    <ellipse cx="200" cy="320" rx="90" ry="30" fill="#00f0ff" opacity="0.15"/>
+  </g>
+
+  <!-- 16-Bit Pixel Art Hero (Scale 8x8 pixels per grid unit) -->
+  <g transform="translate(140, 70) scale(7)">
+    <!-- Shadow -->
+    <rect x="3" y="27" width="12" height="3" fill="#000000" opacity="0.5"/>
+    
+    <!-- Cape Behind -->
+    <rect x="2" y="10" width="4" height="15" fill="#4c1d95"/>
+    <rect x="1" y="14" width="3" height="12" fill="#3b0764"/>
+    
+    <!-- Legs / Boots -->
+    <rect x="5" y="21" width="3" height="6" fill="#334155"/>
+    <rect x="10" y="21" width="3" height="6" fill="#334155"/>
+    <rect x="4" y="26" width="4" height="2" fill="#1e293b"/>
+    <rect x="10" y="26" width="4" height="2" fill="#1e293b"/>
+
+    <!-- Torso / Plate Armor -->
+    <rect x="5" y="11" width="8" height="10" fill="#94a3b8"/>
+    <rect x="6" y="12" width="6" height="8" fill="#cbd5e1"/>
+    <rect x="7" y="14" width="4" height="4" fill="#f8fafc"/>
+    <rect x="5" y="18" width="8" height="3" fill="#475569"/>
+    <!-- Belt / Buckle -->
+    <rect x="8" y="19" width="2" height="2" fill="#fbbf24"/>
+
+    <!-- Shoulder Pauldrons -->
+    <rect x="3" y="10" width="3" height="4" fill="#64748b"/>
+    <rect x="12" y="10" width="3" height="4" fill="#cbd5e1"/>
+
+    <!-- Head / Great Helm -->
+    <rect x="5" y="4" width="8" height="7" fill="#64748b"/>
+    <rect x="6" y="3" width="6" height="8" fill="#94a3b8"/>
+    <rect x="7" y="2" width="4" height="2" fill="#cbd5e1"/>
+    <!-- Golden Plume -->
+    <rect x="8" y="0" width="2" height="3" fill="#fbbf24"/>
+    <rect x="7" y="1" width="1" height="2" fill="#f59e0b"/>
+    <!-- Visor Slit -->
+    <rect x="6" y="7" width="6" height="2" fill="#09090b"/>
+    <rect x="7" y="7" width="4" height="1" fill="#00f0ff"/>
+
+    <!-- Shield on Left Arm -->
+    <rect x="1" y="11" width="4" height="10" fill="#1e293b"/>
+    <rect x="2" y="12" width="2" height="8" fill="#0284c7"/>
+    <rect x="2" y="15" width="2" height="2" fill="#fbbf24"/>
+
+    <!-- Sword on Right Arm -->
+    <rect x="14" y="12" width="2" height="3" fill="#cbd5e1"/>
+    <!-- Crossguard -->
+    <rect x="12" y="9" width="6" height="1" fill="#fbbf24"/>
+    <rect x="14" y="10" width="2" height="2" fill="#78350f"/>
+    <!-- Glowing Blade -->
+    <rect x="14" y="1" width="2" height="8" fill="#e0f2fe"/>
+    <rect x="15" y="0" width="1" height="9" fill="#ffffff"/>
+    <rect x="16" y="2" width="1" height="6" fill="#38bdf8"/>
+  </g>
+
+  <!-- Frame overlay badges -->
+  <rect x="16" y="16" width="120" height="24" rx="12" fill="rgba(0,240,255,0.1)" stroke="rgba(0,240,255,0.3)" stroke-width="1"/>
+  <text x="28" y="32" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#00f0ff">🎮 16-BIT HERO</text>
+
+  <rect x="290" y="16" width="94" height="24" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="302" y="32" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff">32x32 SPRITE</text>
+</svg>

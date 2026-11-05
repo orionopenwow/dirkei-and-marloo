@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="100%" height="100%" shape-rendering="crispEdges">
+  <defs>
+    <pattern id="px-grid-pat" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#0d0d14"/>
+      <rect width="8" height="8" fill="#13131c"/>
+      <rect x="8" y="8" width="8" height="8" fill="#13131c"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="160" fill="url(#px-grid-pat)"/>
+  
+  <!-- 4 Frame Divisions -->
+  <line x1="150" y1="0" x2="150" y2="160" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="160" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <line x1="450" y1="0" x2="450" y2="160" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Frame Labels -->
+  <text x="14" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">FRAME 1: IDLE</text>
+  <text x="164" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#34d399">FRAME 2: WALK</text>
+  <text x="314" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24">FRAME 3: ATTACK</text>
+  <text x="464" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a855f7">FRAME 4: SHIELD BLOCK</text>
+
+  <!-- Frame 1: Idle Knight -->
+  <g transform="translate(55, 45) scale(3.5)">
+    <rect x="4" y="16" width="2" height="8" fill="#334155"/>
+    <rect x="9" y="16" width="2" height="8" fill="#334155"/>
+    <rect x="3" y="22" width="3" height="3" fill="#0f172a"/>
+    <rect x="9" y="22" width="3" height="3" fill="#0f172a"/>
+    <rect x="4" y="8" width="7" height="9" fill="#94a3b8"/>
+    <rect x="5" y="9" width="5" height="7" fill="#cbd5e1"/>
+    <rect x="5" y="1" width="5" height="7" fill="#64748b"/>
+    <rect x="5" y="4" width="5" height="2" fill="#00f0ff"/>
+    <rect x="12" y="5" width="2" height="12" fill="#38bdf8"/>
+    <rect x="1" y="9" width="3" height="8" fill="#0284c7"/>
+  </g>
+
+  <!-- Frame 2: Walk Knight -->
+  <g transform="translate(205, 45) scale(3.5)">
+    <rect x="2" y="16" width="3" height="8" fill="#334155"/>
+    <rect x="10" y="16" width="3" height="8" fill="#334155"/>
+    <rect x="1" y="23" width="3" height="2" fill="#0f172a"/>
+    <rect x="11" y="21" width="3" height="3" fill="#0f172a"/>
+    <rect x="4" y="7" width="7" height="9" fill="#94a3b8"/>
+    <rect x="5" y="8" width="5" height="7" fill="#cbd5e1"/>
+    <rect x="5" y="0" width="5" height="7" fill="#64748b"/>
+    <rect x="5" y="3" width="5" height="2" fill="#00f0ff"/>
+    <rect x="12" y="7" width="2" height="12" fill="#38bdf8"/>
+    <rect x="1" y="8" width="3" height="8" fill="#0284c7"/>
+  </g>
+
+  <!-- Frame 3: Attack Slash -->
+  <g transform="translate(350, 45) scale(3.5)">
+    <rect x="3" y="16" width="3" height="8" fill="#334155"/>
+    <rect x="9" y="16" width="3" height="8" fill="#334155"/>
+    <rect x="2" y="22" width="3" height="3" fill="#0f172a"/>
+    <rect x="9" y="22" width="3" height="3" fill="#0f172a"/>
+    <rect x="4" y="8" width="7" height="9" fill="#94a3b8"/>
+    <rect x="5" y="9" width="5" height="7" fill="#cbd5e1"/>
+    <rect x="5" y="1" width="5" height="7" fill="#64748b"/>
+    <rect x="6" y="4" width="4" height="2" fill="#fbbf24"/>
+    <!-- Sword thrust -->
+    <rect x="12" y="10" width="14" height="3" fill="#fef08a"/>
+    <rect x="14" y="11" width="12" height="1" fill="#ffffff"/>
+    <rect x="26" y="9" width="3" height="5" fill="#f59e0b"/>
+  </g>
+
+  <!-- Frame 4: Block Stance -->
+  <g transform="translate(505, 45) scale(3.5)">
+    <rect x="4" y="17" width="3" height="7" fill="#334155"/>
+    <rect x="8" y="17" width="3" height="7" fill="#334155"/>
+    <rect x="4" y="9" width="7" height="9" fill="#94a3b8"/>
+    <rect x="5" y="2" width="5" height="7" fill="#64748b"/>
+    <!-- Large Tower Shield Raised -->
+    <rect x="8" y="6" width="6" height="14" fill="#1e293b"/>
+    <rect x="9" y="7" width="4" height="12" fill="#a855f7"/>
+    <rect x="10" y="9" width="2" height="8" fill="#f3e8ff"/>
+    <rect x="2" y="8" width="2" height="10" fill="#38bdf8"/>
+  </g>
+</svg>

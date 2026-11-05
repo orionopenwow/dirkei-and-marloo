@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Deep Midnight Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020406"/>
+      <stop offset="35%" stop-color="#050e12"/>
+      <stop offset="70%" stop-color="#071b17"/>
+      <stop offset="100%" stop-color="#030708"/>
+    </linearGradient>
+
+    <!-- Moonlight / Canopy Glow -->
+    <radialGradient id="moonGlow" cx="45%" cy="15%" r="65%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.18"/>
+      <stop offset="30%" stop-color="#10b981" stop-opacity="0.08"/>
+      <stop offset="70%" stop-color="#061a18" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Far Mist Layer -->
+    <linearGradient id="mistGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.06"/>
+      <stop offset="60%" stop-color="#064e3b" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#020506" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Vignette Gradient -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="40%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="80%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
+    </radialGradient>
+
+    <!-- Pine Tree Symbol 1 (Sharp) -->
+    <g id="pineFar">
+      <polygon points="0,-160 30,0 -30,0" fill="#041214"/>
+      <polygon points="0,-120 40,40 -40,40" fill="#041214"/>
+      <polygon points="0,-80 50,80 -50,80" fill="#041214"/>
+    </g>
+
+    <!-- Pine Tree Symbol 2 (Dense) -->
+    <g id="pineNear">
+      <polygon points="0,-220 35,-60 -35,-60" fill="#02090a"/>
+      <polygon points="0,-170 50,-10 -50,-10" fill="#02090a"/>
+      <polygon points="0,-110 65,50 -65,50" fill="#02090a"/>
+      <polygon points="0,-50 80,120 -80,120" fill="#02090a"/>
+      <rect x="-8" y="120" width="16" height="40" fill="#010506"/>
+    </g>
+  </defs>
+
+  <!-- Sky Base -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+
+  <!-- Celestial Canopy Beam -->
+  <rect width="1920" height="1080" fill="url(#moonGlow)"/>
+
+  <!-- Distant Mountain Ridge -->
+  <path d="M-50,680 Q250,560 550,640 T1150,580 T1650,650 T2000,590 L2000,1080 L-50,1080 Z" fill="#030d10" opacity="0.65"/>
+  <path d="M-50,720 Q320,620 700,690 T1400,630 T2000,680 L2000,1080 L-50,1080 Z" fill="#020a0d" opacity="0.85"/>
+
+  <!-- Far Layer Forest Pines -->
+  <g opacity="0.45" fill="#05181a">
+    <use href="#pineFar" x="80" y="700" transform="scale(0.85)"/>
+    <use href="#pineFar" x="190" y="690" transform="scale(0.7)"/>
+    <use href="#pineFar" x="310" y="710" transform="scale(0.9)"/>
+    <use href="#pineFar" x="420" y="680" transform="scale(0.75)"/>
+    <use href="#pineFar" x="550" y="705" transform="scale(0.8)"/>
+    <use href="#pineFar" x="680" y="690" transform="scale(0.7)"/>
+    <use href="#pineFar" x="810" y="715" transform="scale(0.85)"/>
+    <use href="#pineFar" x="940" y="695" transform="scale(0.75)"/>
+    <use href="#pineFar" x="1080" y="710" transform="scale(0.9)"/>
+    <use href="#pineFar" x="1220" y="685" transform="scale(0.75)"/>
+    <use href="#pineFar" x="1350" y="700" transform="scale(0.8)"/>
+    <use href="#pineFar" x="1490" y="690" transform="scale(0.85)"/>
+    <use href="#pineFar" x="1620" y="715" transform="scale(0.9)"/>
+    <use href="#pineFar" x="1760" y="690" transform="scale(0.75)"/>
+    <use href="#pineFar" x="1890" y="705" transform="scale(0.8)"/>
+  </g>
+
+  <!-- Mid Ground Forest Mist Band -->
+  <rect y="640" width="1920" height="280" fill="url(#mistGrad)" opacity="0.7"/>
+
+  <!-- Near Layer Foreground Pines (Framing Left and Right Sides) -->
+  <g opacity="0.85">
+    <!-- Left Flank Ancient Trees -->
+    <use href="#pineNear" x="50" y="850" transform="scale(1.4)"/>
+    <use href="#pineNear" x="150" y="890" transform="scale(1.2)"/>
+    <use href="#pineNear" x="240" y="930" transform="scale(1.1)"/>
+    <use href="#pineNear" x="-30" y="830" transform="scale(1.6)"/>
+
+    <!-- Right Flank Ancient Trees -->
+    <use href="#pineNear" x="1880" y="840" transform="scale(1.5)"/>
+    <use href="#pineNear" x="1780" y="880" transform="scale(1.3)"/>
+    <use href="#pineNear" x="1690" y="920" transform="scale(1.1)"/>
+    <use href="#pineNear" x="1950" y="820" transform="scale(1.7)"/>
+
+    <!-- Center Low Silhouette Horizon -->
+    <path d="M0,920 Q300,890 600,910 T1200,900 T1800,915 L1920,920 L1920,1080 L0,1080 Z" fill="#010608"/>
+  </g>
+
+  <!-- Subtle Ethereal Fireflies / Forest Embers -->
+  <g fill="#00f0ff" opacity="0.6">
+    <circle cx="280" cy="540" r="2.5" filter="drop-shadow(0 0 4px #00f0ff)"/>
+    <circle cx="390" cy="480" r="1.5" filter="drop-shadow(0 0 3px #00f0ff)"/>
+    <circle cx="620" cy="580" r="2" filter="drop-shadow(0 0 4px #10b981)"/>
+    <circle cx="850" cy="460" r="3" filter="drop-shadow(0 0 6px #00f0ff)"/>
+    <circle cx="980" cy="520" r="1.8" filter="drop-shadow(0 0 4px #10b981)"/>
+    <circle cx="1140" cy="490" r="2.2" filter="drop-shadow(0 0 5px #00f0ff)"/>
+    <circle cx="1380" cy="560" r="1.6" filter="drop-shadow(0 0 3px #10b981)"/>
+    <circle cx="1560" cy="510" r="2.8" filter="drop-shadow(0 0 6px #00f0ff)"/>
+    <circle cx="1680" cy="610" r="1.5" filter="drop-shadow(0 0 3px #00f0ff)"/>
+  </g>
+
+  <!-- Golden Canopy Dust / Embers -->
+  <g fill="#fbbf24" opacity="0.45">
+    <circle cx="450" cy="380" r="2" filter="drop-shadow(0 0 4px #fbbf24)"/>
+    <circle cx="780" cy="320" r="2.5" filter="drop-shadow(0 0 5px #fbbf24)"/>
+    <circle cx="1190" cy="360" r="1.8" filter="drop-shadow(0 0 4px #fbbf24)"/>
+    <circle cx="1480" cy="410" r="2.2" filter="drop-shadow(0 0 5px #fbbf24)"/>
+  </g>
+
+  <!-- Dark Atmospheric Vignette (Keeps Center Contrast Sharp) -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

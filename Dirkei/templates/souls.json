@@ -1,0 +1,218 @@
+{
+ "approved": true,
+ "t": {
+  "id": "souls",
+  "label": "Soulslike (Dark Souls style)",
+  "inspired": "Dark Souls (2011)",
+  "desc": "Hard, fair, committed combat. Stamina, bonfire checkpoints, a world that loops back on itself through shortcuts.",
+  "status": "researched",
+  "sources": [
+   {
+    "title": "Dark Souls (video game) - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Dark_Souls_(video_game)"
+   },
+   {
+    "title": "Cutting through the fog of Dark Souls, part one - Game Developer",
+    "url": "https://www.gamedeveloper.com/design/cutting-through-the-fog-of-dark-souls-part-one-"
+   },
+   {
+    "title": "Deep Dungeon: Exploring the Design of Dark Souls - GameBanshee",
+    "url": "https://gamebanshee.com/963a"
+   }
+  ],
+  "forbidden": [
+   "Lordran",
+   "Estus",
+   "Solaire",
+   "Firelink",
+   "Anor Londo",
+   "Undead Asylum",
+   "Undead Burg",
+   "Gwyn",
+   "Artorias",
+   "Havel",
+   "Humanity",
+   "Chosen Undead",
+   "Darkroot",
+   "Blighttown",
+   "Sen's Fortress",
+   "FromSoftware",
+   "Miyazaki",
+   "Oscar",
+   "Quelaag",
+   "Ornstein",
+   "Smough",
+   "Lautrec",
+   "Siegmeyer",
+   "Catarina",
+   "Kingseeker",
+   "Bell of Awakening"
+  ],
+  "needs": {
+   "dim": "3D"
+  },
+  "answers": {
+   "genre": "arpg",
+   "sub": "none",
+   "dim": "3D",
+   "camera": "tps",
+   "art": "real",
+   "tone": "dark",
+   "audience": "adult",
+   "difficulty": "punishing",
+   "scope": "3",
+   "content": "some",
+   "session": "60",
+   "story": "light",
+   "msty": "orch",
+   "sfx": "real",
+   "amb": "eerie",
+   "voice": "barks",
+   "mp": "none",
+   "perf": "std",
+   "money": "paid",
+   "controls": [
+    "kbm",
+    "gamepad"
+   ],
+   "devices": [
+    "pc"
+   ],
+   "world": "hub",
+   "fail": "softloss",
+   "prog": "gear",
+   "feel": "weighty",
+   "nview": "env",
+   "ending": "boss",
+   "procedural": "none",
+   "save": "checkpoint",
+   "ui": "min",
+   "team": "duo",
+   "time": "part",
+   "loop": "Leave the bonfire, explore carefully and fight enemies one at a time, collect souls, open a shortcut back to safety, level up at the bonfire, then beat the boss behind the fog gate. Dying drops your souls where you fell and you get one try to take them back."
+  },
+  "pillars": [
+   "Committed combat: attacks, rolls and blocks cost stamina and cannot be cancelled once started, so every swing is a decision.",
+   "Death teaches: dying costs your souls (currency) at the spot you died; you get one chance to recover them. Enemies come back when you rest.",
+   "Fair but hard: every enemy has a readable wind-up and a learnable pattern. Deaths feel like the player's mistake, never random.",
+   "One connected world: paths loop back to earlier places through shortcuts (doors, elevators, ladders), so the world feels like one real place and difficulty is paced by gating, not by a map.",
+   "Safe points as a trade-off: bonfires heal you, refill limited healing flasks and allow levelling, but also respawn every normal enemy (not bosses). Resting always has a price.",
+   "Scarce healing: flasks cannot be found in the world, only refilled at a bonfire, so resources stay tight and every fight is a spend decision.",
+   "Reward through discovery: difficulty is a means to a sense of achievement and the surprise of finding a new place, not a goal in itself."
+  ],
+  "philosophy": "Player and enemies are explicit state machines (idle, move, attack wind-up, attack active, recover, stagger, dead). Animations drive combat: hit boxes and invincibility frames are switched on and off by animation events whose frame numbers live in data. Combat runs on a fixed timestep. A small input buffer (about 150 ms) forgives early presses. Weapons, enemies, stats and soul costs are data tables, not code. World state is a flat dictionary of flags (door opened, boss dead, bonfire lit) saved at bonfires. No global manager that knows everything: systems talk through small events. Build the map first as a graph of areas and gates, then place enemies to pace difficulty.",
+  "avoid": [
+   "Do not copy any names, characters, places, lore, art, music or text from the original game. Recreate the design principles only.",
+   "No unfair deaths: no hidden instant kills without a clear hint, no enemy attacks without a telegraph, no random damage.",
+   "No floaty or cancellable attacks: commitment is the point. Never let the player cancel a swing into a roll for free.",
+   "No quest markers or tutorials that explain everything. Teach with the level layout and one safe first enemy.",
+   "Do not let the world degrade into linear corridors joined by warps late on: keep shortcuts and loops all the way through.",
+   "Do not make runs to a boss too long: after a boss a shortcut or checkpoint must appear within a few minutes of play."
+  ],
+  "art": "Desaturated, grey-green and ochre palette with small warm pockets of light (bonfires, torches) that mean safety. Decayed gothic architecture with huge scale and verticality; long sight lines so the player can see places they will reach later. Low-key lighting, heavy fog for depth, readable silhouettes for enemies against the background. Realistic-stylised, not photoreal.",
+  "music": "Almost silent while exploring: wind, distant sounds, the player's own footsteps. Music only for bosses (orchestral with a choir, building through phases) and a soft, short lull when resting at a bonfire. Silence makes the music matter.",
+  "sound": "Heavy, weighty hits with a clear difference between hitting flesh, armour and shield. Armour clinks scale with equipment weight. Footsteps change by surface and are a gameplay cue. Enemies make a sound just before a big attack. Stamina running out has a breathy, panting cue. Voices are short and gruff mumbles; no voiced exposition.",
+  "skip": [
+   "Melee Combat Core",
+   "Health & Death Loop",
+   "Enemy AI: Chase and Attack"
+  ],
+  "steps": {
+   "Camera": "Add a lock-on: a button picks the nearest enemy in front, the camera keeps both player and target framed, movement becomes strafing around the target, and it releases when the target dies or is too far.",
+   "Player Controller": "Movement has weight: a short acceleration, a walk and a sprint that costs stamina, and a roll with a few invincibility frames then a recovery. Movement slows with equip load.",
+   "Onboarding & Tutorial": "Teach with the level: the first area has one slow enemy, a message on the floor that shows the controls, and a safe place to practise. No pop-up tutorials.",
+   "Sound Identity": "Make the first minutes mostly quiet. Plan three layers only: ambience, combat sounds, and boss music.",
+   "Visual Style Pass": "Check that every bonfire or light source is the warmest, brightest thing nearby so safety reads at a glance."
+  },
+  "add": [
+   [
+    1,
+    0,
+    "Stamina & Committed Combat",
+    "Every action is a decision.",
+    "Build a stamina bar that light attacks, heavy attacks, rolls and blocking all spend. Stamina regenerates only after a short delay and not while blocking. Attacks have wind-up, active and recovery phases and cannot be cancelled during wind-up or recovery. Add a roll with invincibility frames and a backstep. Put all frame counts and stamina costs in one data table.",
+    "I can fight one enemy using attack, roll and block, and running out of stamina leaves me open."
+   ],
+   [
+    1,
+    0,
+    "Enemy Telegraphs, Poise & Aggro",
+    "Hard but fair.",
+    "Give each enemy type a readable wind-up before every attack, a damage window, and a recovery the player can punish. Add poise: big hits stagger, light hits do not. Enemies notice you inside a cone and a range, chase, and give up (leash) if you run far away. Two enemies must never attack at the exact same moment by default.",
+    "I can learn an enemy's pattern and beat it without taking damage."
+   ],
+   [
+    1,
+    0,
+    "Bonfire Checkpoints & Healing Flasks",
+    "Rest is a trade-off.",
+    "Add bonfires: lighting one sets the respawn point. Resting there restores health, refills a limited number of healing flasks, and respawns all normal enemies but not bosses. Flasks cannot be found in the world, only refilled here. Saving the game happens at that moment.",
+    "Resting heals me and brings the enemies back; dying sends me to the last bonfire."
+   ],
+   [
+    1,
+    0,
+    "Currency Drop & Recovery",
+    "Lose it, earn it back.",
+    "Enemies drop souls, which are both currency and experience. On death, drop all carried souls at the death spot. Touching the spot gets them back. Dying again before then loses them for good. Show the spot clearly in the world.",
+    "My souls are left where I died and I can get them back once."
+   ],
+   [
+    1,
+    1,
+    "Levelling, Stats & Equip Load",
+    "Build your own fighter.",
+    "Spend souls at a bonfire to raise stats (vitality, endurance, strength, dexterity, intelligence). Derived values come from stats: health, stamina, damage scaling per weapon. Add equip load: total gear weight sets roll speed in tiers (light, medium, heavy).",
+    "Raising a stat changes my numbers, and heavy gear makes my roll slower."
+   ],
+   [
+    2,
+    1,
+    "Interconnected World & Shortcuts",
+    "One place, not a list of levels.",
+    "Design the map as a hub with areas that loop back to it. Include at least three shortcuts that open from one side only (a locked door, a lever, a ladder kick-down, an elevator). Make a landmark visible from far away that the player can later reach. Mark nothing on a map: the layout teaches.",
+    "After opening a shortcut I can get from a far place back to a bonfire quickly."
+   ],
+   [
+    2,
+    1,
+    "Gated Progression Pacing",
+    "Difficulty without an open map.",
+    "Lay out the areas as a graph where each gate needs a key, a boss win or a lever. Place enemies so difficulty rises along the main path, with one optional harder branch. Do not use level scaling.",
+    "I can see why I cannot enter a gate yet and I find the way through by exploring."
+   ],
+   [
+    2,
+    1,
+    "Boss Fight: Fog Gate & Phases",
+    "The exam.",
+    "Build a boss arena entered through a fog gate that locks behind the player. The boss has two phases, large readable attacks with different counters, and a health bar at the bottom. A bonfire sits close to the arena. After the win, drop a reward and open a shortcut.",
+    "The boss has two phases and I can beat it by learning its attacks."
+   ],
+   [
+    3,
+    1,
+    "Item Lore & Sparse Storytelling",
+    "The world tells the story.",
+    "Write one short description for every item and weapon that hints at the world's history. Add 3-4 characters who speak in short, vague lines and move on as the game progresses. No quest log.",
+    "I learn about the world from items and a few characters, without a journal."
+   ],
+   [
+    3,
+    2,
+    "Minimal HUD & Player Messages",
+    "Do not hold their hand.",
+    "Keep the HUD to health, stamina, flasks and souls. Add short messages players can read on the floor (premade phrases only) for hints and warnings.",
+    "The screen stays clean and I can read a hint left on the ground."
+   ]
+  ],
+  "differ": [
+   "Change the fantasy: a sunken city, a space wreck or a haunted school.",
+   "Replace stamina with another limit (heat, breath, focus).",
+   "Make the loop co-op for two players.",
+   "Give the shortcut system a twist, such as tides that open and close paths."
+  ],
+  "status_note": "",
+  "notes": "Based on one search, so sources were only seen as search results with summaries, not read in full. Stamina details are common practice, not exact values from the original. Co-op, invasion and online features are left out."
+ }
+}

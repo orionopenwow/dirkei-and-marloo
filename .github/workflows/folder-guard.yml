@@ -1,0 +1,54 @@
+name: Folder Isolation Guard
+
+on:
+  push:
+    branches: ["main", "dirkei/*", "marloo/*"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate-push-isolation:
+    name: Verify Contributor Directory Scope
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check Modified Files Against Author Role
+        run: |
+          AUTHOR="${{ github.actor }}"
+          REF_NAME="${{ github.ref_name }}"
+          echo "Triggered by: $AUTHOR on ref: $REF_NAME"
+
+          # Get list of changed files in this push/commit
+          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
+          echo "Changed files in commit:"
+          echo "$CHANGED_FILES"
+
+          # Check if author is Dirkei or on a dirkei branch
+          if [[ "$AUTHOR" =~ [Dd]irkei ]] || [[ "$REF_NAME" =~ ^dirkei/ ]]; then
+            echo "Enforcing Dirkei folder isolation..."
+            for FILE in $CHANGED_FILES; do
+              if [[ ! "$FILE" =~ ^Dirkei/ ]]; then
+                echo "❌ ERROR: Dirkei cannot modify files outside Dirkei/! Found: $FILE"
+                exit 1
+              fi
+            done
+            echo "✔ All files are cleanly located inside Dirkei/"
+          fi
+
+          # Check if author is Marloo or on a marloo branch
+          if [[ "$AUTHOR" =~ [Mm]arloo ]] || [[ "$REF_NAME" =~ ^marloo/ ]]; then
+            echo "Enforcing Marloo folder isolation..."
+            for FILE in $CHANGED_FILES; do
+              if [[ ! "$FILE" =~ ^Marloo/ ]]; then
+                echo "❌ ERROR: Marloo cannot modify files outside Marloo/! Found: $FILE"
+                exit 1
+              fi
+            done
+            echo "✔ All files are cleanly located inside Marloo/"
+          fi
+
+          echo "✔ Push isolation validation passed successfully."
