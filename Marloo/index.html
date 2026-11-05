@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Queen's Domain Architecture Engine</title>
+<title>Tome: Game Engine // Technical Architecture &amp; Asset Studio</title>
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -384,6 +384,21 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
     box-shadow: 0 4px 12px rgba(217,119,6,0.45), inset 0 1px 0 rgba(255,255,255,0.25) !important;
   }
 
+
+  /* Tome: Game Engine Styling & Floating Logo */
+  @keyframes floatTome {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+  }
+  .tome-glow {
+    filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.55)) drop-shadow(0 0 32px rgba(251, 191, 36, 0.35));
+  }
+  #top-menu-btn:hover {
+    border-color: rgba(168, 85, 247, 0.8) !important;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-1px);
+  }
+
 </style>
 </head>
 <body>
@@ -392,7 +407,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
     
     <!-- Top Header -->
     <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(220,179,123,.4);padding-bottom:12px">
-      <img class="logo" src="icon.png" alt="Queen's Domain" style="width:34px;height:34px;border-radius:6px;object-fit:cover;box-shadow:0 0 10px rgba(220,179,123,.35);border:1px solid #5a483a">
+      <img class="logo" src="icon.png" alt="Tome" style="width:34px;height:34px;border-radius:6px;object-fit:cover;box-shadow:0 0 10px rgba(220,179,123,.35);border:1px solid #5a483a">
       <div>
         <h2 style="color:var(--gold);margin:0;font-size:17px;letter-spacing:.16em;text-transform:uppercase;border:none">QUEEN'S DOMAIN // ARCHITECTURE ONBOARDING & ACADEMY</h2>
         <small style="color:var(--dim);font-size:11px;letter-spacing:.12em">AUTONOMOUS VIBE-CODING ENGINE // HOW TO BUILD COMPLETE GAMES WITHOUT TECH DEBT</small>
@@ -418,7 +433,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
       <div style="font-size:12.5px;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:8px">⚡ GET A PROJECT STARTED IMMEDIATELY</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">
         <button class="btn gold" id="wl-start-qd" style="padding:10px;text-align:left;display:flex;flex-direction:column;gap:3px">
-          <b>👑 Queen's Domain Preset</b>
+          <b>👑 Tome Preset</b>
           <span style="font-size:11px;opacity:.85">50-step retro ARPG blueprint</span>
         </button>
         <button class="btn" id="wl-start-wiz" style="padding:10px;text-align:left;display:flex;flex-direction:column;gap:3px">
@@ -442,7 +457,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:8px">
         <div class="edu-card">
           <b>⚡ Lesson 1: The Context Window Trap</b>
-          <span>Asking AI for "a whole game" blows token context, hallucinates nonexistent APIs, and produces unmaintainable spaghetti. Queen's Domain solves this: prompts are synthesized one self-contained layer at a time with strict acceptance checks.</span>
+          <span>Asking AI for "a whole game" blows token context, hallucinates nonexistent APIs, and produces unmaintainable spaghetti. Tome solves this: prompts are synthesized one self-contained layer at a time with strict acceptance checks.</span>
         </div>
         <div class="edu-card">
           <b>🛡️ Lesson 2: The 12 Architectural Guardrails</b>
@@ -483,7 +498,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
     </div>
 
     <div class="dim" style="font-size:12.5px;line-height:1.45;background:#030c1c;padding:10px 14px;border:1px solid #14407f;border-radius:8px">
-      Queen's Domain does not run on a remote server: it is a <b>100% sovereign desktop studio</b> running locally on your PC (<code style="color:var(--cyan)">127.0.0.1</code>). You can plug in official CLI agents, commercial API keys, or run completely offline with free local models.
+      Tome does not run on a remote server: it is a <b>100% sovereign desktop studio</b> running locally on your PC (<code style="color:var(--cyan)">127.0.0.1</code>). You can plug in official CLI agents, commercial API keys, or run completely offline with free local models.
     </div>
 
     <!-- 4 Connection Cards Grid -->
@@ -582,20 +597,15 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
 <div id="shell">
 <nav id="nav" class="collapsed">
   <!-- Brand & Status Console (Integrated from header bar into sidebar) -->
-  <header id="sb-header" class="sb-header-card">
+  <header id="sb-header" class="sb-header-card" style="border-color:rgba(168,85,247,0.25);box-shadow:0 8px 24px rgba(0,0,0,0.6),0 0 16px rgba(168,85,247,0.15)">
     <div style="display:flex;align-items:center;gap:10px">
-      <img class="logo" src="icon.png" alt="Queen's Domain" style="width:34px;height:34px;border-radius:6px;object-fit:cover;box-shadow:0 0 10px rgba(220,179,123,.35);border:1px solid #5a483a;flex:none">
+      <img class="logo" src="tome_logo_transparent.png" alt="Tome: Game Engine" style="width:36px;height:36px;border-radius:8px;object-fit:contain;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.35);box-shadow:0 0 10px rgba(168,85,247,0.3)">
       <div style="flex:1;min-width:0">
-        <h1 style="font-size:13.5px;font-weight:bold;letter-spacing:.04em;color:var(--gold);margin:0;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">QUEEN'S DOMAIN</h1>
-        <small style="display:block;font-size:9px;font-weight:700;letter-spacing:.02em;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ARPG ARCHITECTURE LAB</small>
+        <h1 style="font-size:13.5px;font-weight:bold;color:#ffffff;text-shadow:0 0 8px rgba(168,85,247,0.4);margin:0;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tome: Game Engine</h1>
+        <small style="display:block;color:#c084fc;font-size:9px;font-weight:700;letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ARCHITECTURE &amp; AGENT STUDIO</small>
       </div>
     </div>
-    <div class="sbar big" id="r-prog" title="Blueprint Progress" style="height:6px;margin:6px 0 4px;border-radius:3px;background:#0d0a08"><i></i></div>
-    <div class="res" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:0;font-size:11px">
-      <span title="Steps completed / total" style="padding:3px 6px;border-radius:12px;justify-content:center"><i class="gem"></i><b id="r-done">0</b>/<b id="r-total">50</b></span>
-      <span title="Target platform" style="padding:3px 6px;border-radius:12px;justify-content:center"><i class="gem s"></i><b id="r-plat">UNITY</b></span>
-      <span title="Loaded model" style="grid-column:span 2;padding:3px 6px;border-radius:12px;justify-content:center"><i class="gem" style="background:#c9a8ff;box-shadow:0 0 6px #9a6bff"></i><b id="r-model">NO MODEL</b></span>
-    </div>
+    <div class="row" style="margin-top:4px;font-size:11px"><span id="r-plat" class="badge"></span><span id="r-model" class="badge" style="display:none"></span><span id="r-prog" class="dim mono" style="margin-left:auto"><span id="r-done">0</span>/<span id="r-total">0</span></span></div>
   </header>
 
   <!-- Auto-Update Alert Banner (Revealed when a new commit/release is out on GitHub) -->
@@ -655,7 +665,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
   <header id="top-nav-bar" style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(8,10,14,0.85);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:8px">
     <div style="display:flex;align-items:center;gap:10px">
       <button class="btn" id="top-menu-btn" title="Toggle Side Menu" style="font-size:11px;padding:4px 10px;font-weight:bold;letter-spacing:.04em;background:rgba(255,255,255,0.05)">MENU ☰</button>
-      <span style="font-size:12.5px;font-weight:700;color:#ffffff;letter-spacing:.03em">Queen's Domain Architecture Engine</span>
+      <span style="font-size:12.5px;font-weight:700;color:#ffffff;letter-spacing:.03em">Tome Architecture Engine</span>
     </div>
     <div style="display:flex;align-items:center;gap:6px">
       <button class="btn on" data-t="projects" id="top-btn-projects" style="font-size:11px;padding:4px 12px;font-weight:bold">PROJECTS</button>
@@ -690,6 +700,11 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
           <!-- PROMINENT PROMPT COMMAND CENTER (1:1 with Target Mockup) -->
           <div id="zen-hero-square" class="panel-textured" style="text-align:center;max-width:740px;margin:0 auto 18px;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px 24px">
             
+            
+            <!-- Hero Tome Logo -->
+            <div style="display:flex;justify-content:center;margin-bottom:12px">
+              <img class="tome-hero-logo tome-glow" src="tome_logo_transparent.png" alt="Tome: Game Engine" style="width:78px;height:78px;object-fit:contain;animation:floatTome 4s ease-in-out infinite">
+            </div>
             <div style="display:inline-flex;align-items:center;gap:6px;padding:3.5px 14px;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:20px;font-size:10.5px;font-weight:700;color:#fbbf24;letter-spacing:.05em;margin-bottom:10px">
               ★ START TYPING A GAME IDEA, GENRE, OR MECHANICS
             </div>
@@ -768,7 +783,7 @@ input:disabled{opacity:.6;color:#ffffff;letter-spacing:.05em}
               <div id="dec-preset-sandbox"></div>
             </div>
             <div id="game-asset-sheet-card">
-              <span id="ash-protagonist-slot"></span><b id="ash-char-name">Queen's Domain Guardian [3D Mesh]</b><div id="ash-char-specs"></div><button id="sub-char-btn"></button>
+              <span id="ash-protagonist-slot"></span><b id="ash-char-name">Tome Guardian [3D Mesh]</b><div id="ash-char-specs"></div><button id="sub-char-btn"></button>
               <span id="ash-world-slot"></span><b id="ash-env-name">Kenney Castle & Dungeon Kit [3D]</b><b id="ash-world-name">Kenney Castle & Dungeon Kit [3D]</b><div id="ash-env-specs"></div><div id="ash-world-specs"></div><button id="sub-env-btn"></button><button id="sub-world-btn"></button>
               <span id="ash-ui-slot"></span><b id="ash-ui-name">Retro RPG UI Pack & Borders</b><div id="ash-ui-specs"></div><button id="sub-ui-btn"></button>
               <span id="ash-audio-slot"></span><b id="ash-audio-name">RPG Audio + Footsteps + Impact SFX</b><div id="ash-audio-specs"></div><button id="sub-audio-btn"></button>
@@ -958,7 +973,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
         <div class="infographic-step">🛠️ <b>4. Get Instant Fix Prompt</b></div>
       </div>
 
-      <p class="dim" style="margin-top:0">Audit any AI-generated game script against Queen's Domain 12 Architectural Guardrails and the Ponytail 7-Rung Decision Ladder.</p>
+      <p class="dim" style="margin-top:0">Audit any AI-generated game script against Tome 12 Architectural Guardrails and the Ponytail 7-Rung Decision Ladder.</p>
 
       <div class="row" style="gap:8px;margin-bottom:8px">
         <button class="btn" id="audit-sample-bad" style="font-size:12px">⚠️ Load Sample Violating Code</button>
@@ -1194,7 +1209,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
       <div id="as-view-3d" style="display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:8px">
           <div style="font-size:13.5px;font-weight:bold;color:#ffffff;display:flex;align-items:center;gap:6px">
-            <span style="color:#f43f5e">⯁</span> ISOLATED CHARACTER WORKSHOP: <span id="m3d-title-name" style="color:#ffffff">Queen's Domain Guardian</span>
+            <span style="color:#f43f5e">⯁</span> ISOLATED CHARACTER WORKSHOP: <span id="m3d-title-name" style="color:#ffffff">Tome Guardian</span>
           </div>
           <div style="display:flex;gap:4px">
             <button class="icon-btn gold" id="m3d-cdn-btn" style="border-radius:6px;font-size:11.5px">🌐 Free 3D CDNs</button>
@@ -1291,7 +1306,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
             
             <!-- Character Stand-In Render Image -->
             <div id="m3d-canvas-wrap" style="position:relative;display:flex;align-items:center;justify-content:center;perspective:800px">
-              <img id="m3d-render-img" src="presets/guardian_model.jpg" alt="Queen's Domain Guardian 3D Model" style="max-height:360px;max-width:100%;object-fit:contain;border-radius:8px;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s ease;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.7))">
+              <img id="m3d-render-img" src="presets/guardian_model.jpg" alt="Tome Guardian 3D Model" style="max-height:360px;max-width:100%;object-fit:contain;border-radius:8px;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s ease;filter:drop-shadow(0 14px 24px rgba(0,0,0,0.7))">
             </div>
 
             <!-- Viewport Overlay Controls -->
@@ -1303,7 +1318,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
 
             <!-- Bottom Status Bar -->
             <div style="position:absolute;bottom:0;inset-inline:0;background:rgba(10,10,14,0.8);border-top:1px solid rgba(255,255,255,0.06);padding:6px 12px;font-size:11px;color:#a1a1aa;display:flex;justify-content:space-between;align-items:center">
-              <span>Model: <b style="color:#ffffff">Queen's Domain Guardian_v3.2</b> | Triangles: <b style="color:var(--cyan)">45k</b> | Shader: <b style="color:var(--green)">PBR_Lit</b></span>
+              <span>Model: <b style="color:#ffffff">Tome Guardian_v3.2</b> | Triangles: <b style="color:var(--cyan)">45k</b> | Shader: <b style="color:var(--green)">PBR_Lit</b></span>
               <span id="m3d-skin-badge" class="badge ok">SKIN: DEFAULT</span>
             </div>
           </div>
@@ -1314,7 +1329,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
             <div>
               <div style="font-size:11px;font-weight:bold;color:#fbbf24;text-transform:uppercase;margin-bottom:6px">▼ Character Profile</div>
               <div style="display:flex;flex-direction:column;gap:4px">
-                <div class="row" style="justify-content:space-between"><span class="dim">Name:</span><input type="text" id="m3d-pname" value="Queen's Domain Guardian" style="font-size:11.5px;padding:3px 6px;width:140px;border-radius:4px"></div>
+                <div class="row" style="justify-content:space-between"><span class="dim">Name:</span><input type="text" id="m3d-pname" value="Tome Guardian" style="font-size:11.5px;padding:3px 6px;width:140px;border-radius:4px"></div>
                 <div class="row" style="justify-content:space-between"><span class="dim">Level:</span><b style="color:#ffffff">12</b></div>
                 <div class="row" style="justify-content:space-between"><span class="dim">Health:</span><b style="color:var(--green)">1500 HP</b></div>
                 <div class="row" style="justify-content:space-between"><span class="dim">Mana:</span><b style="color:var(--cyan)">600 MP</b></div>
@@ -1641,7 +1656,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
             <button class="btn" id="btn-copy-cursorrules" style="font-size:11.5px;padding:6px 12px">📄 Copy .cursorrules</button>
           </div>
         </div>
-        <p class="dim" style="font-size:12px;line-height:1.45;margin:0">Queen's Domain acts as the architectural brain for your AI coding agents. By injecting explicit boundaries (<code>AGENTS.md</code>) and rule guardrails (<code>.cursorrules</code>) into your repo, agents write modular 60Hz deterministic game code without hallucinating bloated wrapper factories or memory leaks.</p>
+        <p class="dim" style="font-size:12px;line-height:1.45;margin:0">Tome acts as the architectural brain for your AI coding agents. By injecting explicit boundaries (<code>AGENTS.md</code>) and rule guardrails (<code>.cursorrules</code>) into your repo, agents write modular 60Hz deterministic game code without hallucinating bloated wrapper factories or memory leaks.</p>
       </div>
 
       <!-- Agent Launch Matrix -->
@@ -1655,7 +1670,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
               <span class="badge ok" style="font-size:9px">CLI AGENT</span>
             </div>
             <div style="font-size:11.5px;color:#d4d4d8;line-height:1.4">Direct terminal code agent. Reads repo files, runs builds, and writes deterministic game code.</div>
-            <code style="background:rgba(0,0,0,0.6);padding:4px 6px;border-radius:4px;font-size:10.5px;color:#38bdf8;word-break:break-all">claude -p "Implement Step 1 from Queen's Domain"</code>
+            <code style="background:rgba(0,0,0,0.6);padding:4px 6px;border-radius:4px;font-size:10.5px;color:#38bdf8;word-break:break-all">claude -p "Implement Step 1 from Tome"</code>
             <button class="btn" id="btn-agent-launch-claude" style="margin-top:auto;font-size:11px;padding:5px">🚀 Launch Claude CLI</button>
           </div>
 
@@ -1688,7 +1703,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
               <span class="badge ok" style="font-size:9px">OFFLINE · $0</span>
             </div>
             <div style="font-size:11.5px;color:#d4d4d8;line-height:1.4">100% offline private coding agent with <code>qwen2.5-coder</code>. Zero token fees, unlimited iterations.</div>
-            <div style="font-size:10.5px;color:#a1a1aa">Runs locally via Queen's Domain backend tool-use runner.</div>
+            <div style="font-size:10.5px;color:#a1a1aa">Runs locally via Tome backend tool-use runner.</div>
             <button class="btn" id="btn-agent-launch-ollama" style="margin-top:auto;font-size:11px;padding:5px">⚡ Open Ollama Setup</button>
           </div>
         </div>
@@ -1714,7 +1729,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
           </div>
           <div style="background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 10px">
             <b style="color:var(--cyan);font-size:11px">STEP 4: AUDIT IN 1-CLICK</b>
-            <div style="font-size:10.5px;color:#a1a1aa;margin-top:2px">Paste generated code into Queen's Domain's 12-Rule AI Auditor before committing.</div>
+            <div style="font-size:10.5px;color:#a1a1aa;margin-top:2px">Paste generated code into Tome's 12-Rule AI Auditor before committing.</div>
           </div>
           <div style="background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:8px 10px">
             <b style="color:var(--cyan);font-size:11px">STEP 5: GIT PUSH</b>
@@ -1729,7 +1744,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
           <b style="font-size:12px;color:#ffffff">📄 REPOSITORY BOUNDARY SPEC (AGENTS.MD)</b>
           <button class="btn gold" data-copy="agents-md" style="font-size:11px;padding:3px 10px">Copy</button>
         </div>
-        <pre id="agents-md" style="margin:0;max-height:240px;overflow:auto"># AGENTS.md Architecture Spec (Queen's Domain Core)
+        <pre id="agents-md" style="margin:0;max-height:240px;overflow:auto"># AGENTS.md Architecture Spec (Tome Core)
 
 ## Agent Work Crew Roles
 1. Agent 1 (Combat Core): /Scripts/Gameplay/Combat/ & /Scripts/Gameplay/Systems/
@@ -1915,7 +1930,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
           <span class="badge ok" style="margin-left:auto">FREE & OPEN SOURCE</span>
         </div>
         <p class="dim" style="font-size:12.5px;line-height:1.4;margin-top:0">
-          In Queen's Domain, software tools are not isolated islands. Every external tool connects directly to your project's <code>assets/</code> folder, and Queen's Domain automatically writes prompt instructions referencing those exact assets:
+          In Tome, software tools are not isolated islands. Every external tool connects directly to your project's <code>assets/</code> folder, and Tome automatically writes prompt instructions referencing those exact assets:
         </p>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:10px">
@@ -1947,7 +1962,7 @@ Pacing: FAST | Mechanic: ACTION | Style: 3D (Ponytail Zero-GC)</pre>
           <div class="action-card" style="cursor:default">
             <div class="action-card-title">🕹️ Spawn.co / Unity / Godot</div>
             <div class="action-card-desc">
-              The destination engines. Feed Queen's Domain synthesized prompts to Claude Code or Codex to assemble the assets, physics, state machines, and HUD into a shipping game.
+              The destination engines. Feed Tome synthesized prompts to Claude Code or Codex to assemble the assets, physics, state machines, and HUD into a shipping game.
             </div>
             <button class="btn gold" id="tool-engine-link" style="margin-top:auto;font-size:11px">Open Engine Matrix</button>
           </div>
@@ -2037,7 +2052,7 @@ const PHASES=["I // CORE ENGINE & PHYSICS ISOLATION","II // COMBAT CHOREOGRAPHY 
 
 const RULES12=["YAGNI / 7-Rung (no wrappers/factories)","Decoupled 60Hz tick vs Update()","Save/Rest monument split","Non-linear stamina potency curve (gamma>=2)","Null-guard safety (TryGetComponent)","Juice / event hooks present","Zero GC alloc in hot loops","Pure data structs (no MonoBehaviour logic)","Fixed-step accumulator with 5-tick cap","Armor taxonomy (Slash/Pierce/Impact)","Determinism (no wall-clock/unseeded RNG in tick)","No golfed validation / error handling"];
 
-const HANDOFF=`PROJECT HANDOFF: Queen's Domain, Slow-Paced Retro ARPG Engine & Vibe-Coding Framework
+const HANDOFF=`PROJECT HANDOFF: Tome, Slow-Paced Retro ARPG Engine & Vibe-Coding Framework
 Target agent: Claude Code. Default mode: Unity C# / Standalone. Alt mode: Spawn.co (Savi declarative specs, no raw C#).
 
 PONYTAIL 7-RUNG LADDER
@@ -2065,8 +2080,8 @@ document.getElementById('handoff-md').textContent=HANDOFF;
 // ---------- state ----------
 const $=id=>document.getElementById(id);
 const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
-// Projects: the Queen's Domain preset (fixed 50 steps) plus any number of generated custom projects.
-const QD={id:'qd',name:"Queen's Domain",preset:true}, AGENTS_QD=$('agents-md').textContent;
+// Projects: the Tome preset (fixed 50 steps) plus any number of generated custom projects.
+const QD={id:'qd',name:"Tome: Awakening",preset:true}, AGENTS_QD=$('agents-md').textContent;
 let store=(()=>{try{return JSON.parse(ls.get('qd.projects')||'null')}catch(e){return null}})()||{list:[],active:'qd',qd:{done:JSON.parse(ls.get('qd.done')||'[]'),cur:+ls.get('qd.cur')||1}};
 let plat=ls.get('qd.plat')||'unity',PJ,STEPS,done,cur;
 function loadProject(id){
@@ -2700,7 +2715,7 @@ async function chatSend(again){ // `again` = text to resend (Retry); leaves the 
 function paintProg(){$('r-prog').firstChild.style.width=Math.round(100*done.size/Math.max(1,STEPS.length))+'%'}
 function sbProj(){
   const g=$('sb-proj');g.innerHTML='';
-  [{id:'qd',name:"Queen's Domain"},...store.list].forEach(p=>{const b=document.createElement('button');b.className='sbp';
+  [{id:'qd',name:"Tome: Awakening"},...store.list].forEach(p=>{const b=document.createElement('button');b.className='sbp';
     const live=!!STEPS&&store.active===p.id,tot=live?STEPS.length:p.id==='qd'?S.length:generate(p.profile).length,d=live?done.size:(p.id==='qd'?store.qd.done:p.done).length;
     b.append(el('span',null,p.name),sbar(d/Math.max(1,tot),'mini'));
     tipBind(b,()=>barCard(p.name,p.id==='qd'?'Preset project':'Your project',[{label:'Steps done',text:d+' / '+tot,f:d/Math.max(1,tot)}],'Click to open its Briefing.'));
@@ -2756,7 +2771,7 @@ ${curRules().map((r,i)=>(i+1)+'. '+r).join('\n')}
 ${p.style==='ponytail'?'Ponytail philosophy: the smallest working change wins, but never golf away validation, null checks, error handling or balance math. ':''}Rules that do not apply pass with note "n/a".
 Reply ONLY with JSON: {"verdict":"PASS"|"FAIL","summary":string,"rules":[{"n":1,"pass":bool,"note":string}...12 items],"remediation_prompt":string (empty if PASS; else a ready-to-paste prompt for an AI coding tool that fixes every failure)}`;
 }
-const SYS_QD=`You are the Queen's Domain code auditor. Audit the submitted code or Savi spec against these 12 rules:
+const SYS_QD=`You are the Tome code auditor. Audit the submitted code or Savi spec against these 12 rules:
 ${RULES12.map((r,i)=>(i+1)+'. '+r).join('\n')}
 Context: 60Hz fixed tick (dt=0.0166667, max 5 ticks/frame), stamina-as-potency D=Dbase*(S/Smax)^gamma*(1+charge), gamma>=2, SaveGame() must NOT respawn monsters, RestAtMonument() does. Ponytail ladder: never golf validation or balance math. If the target is Spawn/Savi, judge the declarative spec, not C#.
 Rules that do not apply to the submission should pass with note "n/a".
@@ -2912,9 +2927,9 @@ function renderProjects(){
     let promptSnippet = '';
     try {
       const stepsArr = p.preset ? [] : generate(p.profile);
-      promptSnippet = stepsArr[0] && stepsArr[0].prompt ? stepsArr[0].prompt.slice(0, 160) + '...' : '[PONYTAIL ARCHITECTURE ENGINE]\nGame: "' + p.name + '"\nFixed 60Hz loop with isolated state structs.';
+      promptSnippet = stepsArr[0] && stepsArr[0].prompt ? stepsArr[0].prompt.slice(0, 160) + '...' : '[TOME: GAME ENGINE // ARCHITECTURE SYSTEM]\nGame: "' + p.name + '"\nFixed 60Hz loop with isolated state structs.';
     } catch(err) {
-      promptSnippet = '[PONYTAIL ARCHITECTURE ENGINE]\nGame: "' + p.name + '"';
+      promptSnippet = '[TOME: GAME ENGINE // ARCHITECTURE SYSTEM]\nGame: "' + p.name + '"';
     }
 
     const prePrompt = el('pre', null, promptSnippet);
@@ -3098,7 +3113,7 @@ $('bb-play').onclick=()=>spUrl&&api('/api/open',{url:spUrl, devMode: isSpawnDevM
 $('bb-cont').onclick=()=>{$('bb-next').style.display='none';go(spStep+1);buildInSpawn(promptFor(cur))};
 $('bb-fix').onclick=()=>{const s=spStep;$('bb-next').style.display='none';buildInSpawn('The last attempt at the step below did not work: '+spWhy+'\nLook at the files in this world, find what is wrong, fix it, and keep everything that already works.\n\n'+promptFor(s))};
 const spMap=()=>{try{return JSON.parse(ls.get('qd.spworld')||'{}')}catch(e){return {}}}; // which Spawn world each project builds into
-function spProjects(){const s=$('sp-proj');s.innerHTML='';[{id:'qd',name:"Queen's Domain"},...store.list].forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.name;s.appendChild(o)});s.value=store.active}
+function spProjects(){const s=$('sp-proj');s.innerHTML='';[{id:'qd',name:"Tome: Awakening"},...store.list].forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=p.name;s.appendChild(o)});s.value=store.active}
 function spReady(){ // one sentence that says what will happen if the user presses Start
   if(spBusy||!SP.connected)return;const p=P.find(x=>x.id===$('sp-prov').value),w=$('sp-world'),wn=w.value?w.options[w.selectedIndex].textContent:'';
   if(!p){spState(P.length?'Connected, but no model was found on this PC. Install Claude Code, Codex or Ollama in Settings.':'Connected. Still loading the list of models (the PC may be busy running one). This fills in by itself.',P.length?'var(--red)':'var(--gold)');$('sp-go').textContent='Start building';return}
@@ -3967,8 +3982,8 @@ function setupAssetStudio(){
       bmSel.textContent = models[bmIdx];
       const name = models[bmIdx].split(' ')[0];
       const pName = $('m3d-pname'), tName = $('m3d-title-name');
-      if(pName) pName.value = "Queen's Domain " + name;
-      if(tName) tName.textContent = "Queen's Domain " + name;
+      if(pName) pName.value = "Tome " + name;
+      if(tName) tName.textContent = "Tome " + name;
       toast(`LOADED MODEL: ${models[bmIdx]}`);
     };
   }
@@ -4108,7 +4123,7 @@ function assetsRender(){
 
   const isPreset = !!PJ.preset;
   const p = isPreset ? (PJ.profile || {
-    name: "Queen's Domain",
+    name: "Tome",
     dim: '2D',
     art: 'pixel',
     genre: 'arpg',
@@ -4134,7 +4149,7 @@ function assetsRender(){
   const metaBar = el('div', 'row');
   metaBar.style.cssText = 'gap:12px;align-items:center;padding:8px 12px;background:#030c1c;border:1px solid #143e77;border-radius:8px;margin-bottom:12px';
   metaBar.innerHTML = `<span class="mono" style="color:var(--cyan);font-size:13px">Matching: <b>${pickOpt(ARTS,p.art).label}</b> art &nbsp;·&nbsp; <b>${(v?pickOpt(VIBES,v).label:'Default')}</b> vibe &nbsp;·&nbsp; <b>${pickOpt(GENRES,p.genre).label}</b> &nbsp;·&nbsp; <b>${p.dim}</b></span>`;
-  if(isPreset) metaBar.innerHTML += `<span class="badge gold" style="margin-left:auto">Queen's Domain Preset (ARPG CC0 Packs)</span>`;
+  if(isPreset) metaBar.innerHTML += `<span class="badge gold" style="margin-left:auto">Tome Preset (ARPG CC0 Packs)</span>`;
   else if(!f) metaBar.innerHTML += `<span class="badge warn" style="margin-left:auto">No folder yet: create one on Repo tab</span>`;
   b.append(metaBar);
 
@@ -4681,7 +4696,7 @@ const ASSET_SLOTS = {
     btnEl: $('sub-char-btn'),
     active: 0,
     options: [
-      { id: 'qd-guardian', name: "Queen's Domain Guardian [3D Mesh]", specs: '45k triangles · PBR Lit · 4-Frame Attack/Block', path: 'assets/characters/guardian.glb' },
+      { id: 'qd-guardian', name: "Tome Guardian [3D Mesh]", specs: '45k triangles · PBR Lit · 4-Frame Attack/Block', path: 'assets/characters/guardian.glb' },
       { id: 'hero-knight-16', name: 'Hero Knight [16x16 Pixel]', specs: '4-Direction Walk/Attack/Hit cycles · 16x16 PNG', path: 'assets/characters/hero_knight_16x16.png' },
       { id: 'cyber-mech', name: 'Cyber Mech Shinobi [3D Rigged]', specs: 'Low-poly rigged mesh · Jetpack Dash · Neon Accents', path: 'assets/characters/cyber_mech.glb' },
       { id: 'forest-ranger', name: 'Forest Ranger & Companion [2D]', specs: 'Bow/Quiver Sprite Atlas · Wolf Pet · 24x24 frames', path: 'assets/characters/forest_ranger.png' },
@@ -4888,7 +4903,7 @@ async function downloadStarterZip() {
   const v = ASSET_SLOTS.vis.options[ASSET_SLOTS.vis.active];
   const bundlePayload = {
     name: (decQ.value.trim() || 'QueensDomain_Starter').replace(/[^a-zA-Z0-9_-]/g, '_'),
-    readme: `# ${(decQ.value.trim() || 'My Game Project')}\nGenerated by Queen's Domain Architecture Engine\nTarget Engine: ${ideEng.toUpperCase()}\nArt Mode: ${ideArt.toUpperCase()}\n\n## Core Loops & Invariants\nFixed 60Hz tick, state struct isolation, zero-GC object pools.\n`,
+    readme: `# ${(decQ.value.trim() || 'My Game Project')}\nGenerated by Tome Architecture Engine\nTarget Engine: ${ideEng.toUpperCase()}\nArt Mode: ${ideArt.toUpperCase()}\n\n## Core Loops & Invariants\nFixed 60Hz tick, state struct isolation, zero-GC object pools.\n`,
     agents: $('agents-md') ? $('agents-md').textContent : `# AGENTS.md Architecture Spec\n`,
     cursorrules: ($('raw-cursorrules') ? $('raw-cursorrules').textContent : '# .cursorrules - Zero Debt Architecture\n'),
     prompt: decPrev.value,
